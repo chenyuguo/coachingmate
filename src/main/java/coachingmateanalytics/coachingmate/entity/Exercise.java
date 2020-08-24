@@ -3,15 +3,15 @@ package coachingmateanalytics.coachingmate.entity;
 import java.util.Date;
 
 public class Exercise {
-    String exercise_id;
-    String title;
-    String description;
-    String[] components;
-    String tips;
-    String[] body_sections;
-    String type;
-    Date created_at;
-    Number added_by;
+    private String exercise_id;
+    private String title;
+    private String description;
+    private String[] components;
+    private String tips;
+    private String[] body_sections;
+    private String type;
+    private Date created_at;
+    private Number added_by;
 
     public Exercise(String exercise_id, String title, String description, String[] components, String tips, String[] body_sections, String type, Date created_at, Number added_by) {
         this.exercise_id = exercise_id;

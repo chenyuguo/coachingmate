@@ -4,26 +4,26 @@ import java.nio.Buffer;
 import java.util.Date;
 
 public class Coach {
-    String user_id;
-    String user_login;
-    String user_pass;
-    String user_activation_key;
-    String user_email;
-    String user_status;
-    String display_name;
-    Date created_date;
-    String[] athlete_ids;
-    String title;
-    String first_name;
-    String last_name;
-    Date date_of_birth;
-    String email;
-    String mobile_phone;
-    String biography;
-    String[] planner_ids;
-    String[] group_ids;
-    Date registered_date;
-    Buffer avatar;
+    private String user_id;
+    private String user_login;
+    private String user_pass;
+    private String user_activation_key;
+    private String user_email;
+    private String user_status;
+    private String display_name;
+    private Date created_date;
+    private String[] athlete_ids;
+    private String title;
+    private String first_name;
+    private String last_name;
+    private Date date_of_birth;
+    private String email;
+    private String mobile_phone;
+    private String biography;
+    private String[] planner_ids;
+    private String[] group_ids;
+    private Date registered_date;
+    private Buffer avatar;
 
     public Coach(String user_id, String user_login, String user_pass, String user_activation_key, String user_email, String user_status, String display_name, Date created_date) {
         this.user_id = user_id;

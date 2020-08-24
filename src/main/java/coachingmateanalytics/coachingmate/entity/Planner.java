@@ -3,16 +3,16 @@ package coachingmateanalytics.coachingmate.entity;
 import java.util.Date;
 
 public class Planner {
-    String planner_id;
-    String[] program_ids;
-    String title;
-    Date starting_date;
-    Number end_interval;
-    String display_countdown;
-    String reverse_countdown;
-    String added_by;
-    String tc_start_date;
-    String tc_interval;
+    private String planner_id;
+    private String[] program_ids;
+    private String title;
+    private Date starting_date;
+    private Number end_interval;
+    private String display_countdown;
+    private String reverse_countdown;
+    private String added_by;
+    private String tc_start_date;
+    private String tc_interval;
 
     public Planner(String planner_id, String title, Date starting_date, Number end_interval, String display_countdown, String reverse_countdown, String added_by, String tc_start_date, String tc_interval) {
         this.planner_id = planner_id;
