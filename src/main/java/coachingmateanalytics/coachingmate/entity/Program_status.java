@@ -1,9 +1,9 @@
 package coachingmateanalytics.coachingmate.entity;
 
 public class Program_status {
-    String program_id;
-    String user_id;
-    Number status;
+    private String program_id;
+    private String user_id;
+    private Number status;
 
     public Program_status(String program_id, String user_id, Number status) {
         this.program_id = program_id;

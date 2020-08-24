@@ -1,9 +1,9 @@
 package coachingmateanalytics.coachingmate.entity;
 
 public class Badge {
-    String badge_id;
-    String url;
-    String title;
+    private String badge_id;
+    private String url;
+    private String title;
 
     public Badge(String badge_id, String url, String title) {
         this.badge_id = badge_id;

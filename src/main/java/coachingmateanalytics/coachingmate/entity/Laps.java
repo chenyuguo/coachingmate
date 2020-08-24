@@ -1,29 +1,29 @@
 package coachingmateanalytics.coachingmate.entity;
 
 public class Laps {
-    Number lap_id;
-    String statistic_id;
-    Number start_position_lat;
-    Number start_position_long;
-    Number end_position_lat;
-    Number end_position_long;
-    Number total_elapsed_time;
-    Number total_distance;
-    Number total_cycles;
-    Number total_calories;
-    Number total_fat_calories;
-    Number avg_speed;
-    Number max_speed;
-    Number avg_power;
-    Number max_power;
-    Number total_ascent;
-    Number total_descent;
-    Number normalized_power;
-    Number avg_stroke_distance;
-    Number num_active_lengths;
-    Number avg_cadence;
-    Number max_cadence;
-    String sport;
+    private Number lap_id;
+    private String statistic_id;
+    private Number start_position_lat;
+    private Number start_position_long;
+    private Number end_position_lat;
+    private Number end_position_long;
+    private Number total_elapsed_time;
+    private Number total_distance;
+    private Number total_cycles;
+    private Number total_calories;
+    private Number total_fat_calories;
+    private Number avg_speed;
+    private Number max_speed;
+    private Number avg_power;
+    private Number max_power;
+    private Number total_ascent;
+    private Number total_descent;
+    private Number normalized_power;
+    private Number avg_stroke_distance;
+    private Number num_active_lengths;
+    private Number avg_cadence;
+    private Number max_cadence;
+    private String sport;
 
     public Laps(Number lap_id, String statistic_id, Number start_position_lat, Number start_position_long, Number end_position_lat, Number end_position_long, Number total_elapsed_time, Number total_distance, Number total_cycles, Number total_calories, Number total_fat_calories, Number avg_speed, Number max_speed, Number avg_power, Number max_power, Number total_ascent, Number total_descent, Number normalized_power, Number avg_stroke_distance, Number num_active_lengths, Number avg_cadence, Number max_cadence, String sport) {
         this.lap_id = lap_id;

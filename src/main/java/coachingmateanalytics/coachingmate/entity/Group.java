@@ -1,9 +1,9 @@
 package coachingmateanalytics.coachingmate.entity;
 
 public class Group {
-    String[] group_id;
-    String[] athlete_ids;
-    String[] planner_ids;
+    private String[] group_id;
+    private String[] athlete_ids;
+    private String[] planner_ids;
 
     public Group(String[] group_id, String[] athlete_ids) {
         this.group_id = group_id;

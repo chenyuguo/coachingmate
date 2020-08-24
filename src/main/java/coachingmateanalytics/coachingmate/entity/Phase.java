@@ -1,9 +1,9 @@
 package coachingmateanalytics.coachingmate.entity;
 
 public class Phase {
-    String phase_id;
-    String phase_name;
-    String description;
+    private String phase_id;
+    private String phase_name;
+    private String description;
 
     public Phase(String phase_id, String phase_name, String description) {
         this.phase_id = phase_id;

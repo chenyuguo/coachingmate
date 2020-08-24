@@ -3,17 +3,17 @@ package coachingmateanalytics.coachingmate.entity;
 import java.util.Date;
 
 public class Program {
-    String program_id;
-    String[] session_ids;
-    Number club_id;
-    String title;
-    Date start_date;
-    String phase_id;
-    String phase;
-    String activity_type_id;
-    String activity_type;
-    String level;
-    Number weeks;
+    private String program_id;
+    private String[] session_ids;
+    private Number club_id;
+    private String title;
+    private Date start_date;
+    private String phase_id;
+    private String phase;
+    private String activity_type_id;
+    private String activity_type;
+    private String level;
+    private Number weeks;
 
     public Program(String program_id, String title, Date start_date, String phase, String activity_type, String level, Number weeks) {
         this.program_id = program_id;

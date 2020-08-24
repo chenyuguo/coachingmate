@@ -4,24 +4,24 @@ import java.nio.Buffer;
 import java.util.Date;
 
 public class Athlete {
-    String user_id;
-    String[] coach_ids;
-    String user_login;
-    String user_pass;
-    String user_activation_key;
-    String user_email;
-    String user_status;
-    String serial_num;
-    String oauth_access_token;
-    String oauth_access_token_secret;
-    String display_name;
-    String mobile_phone;
-    String biography;
-    String[] planner_ids;
-    String[] friend_ids;
-    String[] badge_ids;
-    Buffer avatar;
-    Date created_date;
+    private String user_id;
+    private String[] coach_ids;
+    private String user_login;
+    private String user_pass;
+    private String user_activation_key;
+    private String user_email;
+    private String user_status;
+    private String serial_num;
+    private String oauth_access_token;
+    private String oauth_access_token_secret;
+    private String display_name;
+    private String mobile_phone;
+    private String biography;
+    private String[] planner_ids;
+    private String[] friend_ids;
+    private String[] badge_ids;
+    private Buffer avatar;
+    private Date created_date;
 
     public Athlete(String user_id, String user_login, String user_pass, String user_activation_key, String user_email, String user_status, String display_name, Date created_date) {
         this.user_id = user_id;

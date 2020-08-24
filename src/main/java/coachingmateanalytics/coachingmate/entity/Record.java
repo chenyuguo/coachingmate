@@ -3,17 +3,17 @@ package coachingmateanalytics.coachingmate.entity;
 import java.util.Date;
 
 public class Record {
-    Number record_id;
-    Number lap_id;
-    String  statistic_id;
-    Date timestamp;
-    Number position_lat;
-    Number position_long;
-    Number distance;
-    Number speed;
-    Number altitude;
-    Number heart_rate;
-    Number cadence;
+    private Number record_id;
+    private Number lap_id;
+    private String  statistic_id;
+    private Date timestamp;
+    private Number position_lat;
+    private Number position_long;
+    private Number distance;
+    private Number speed;
+    private Number altitude;
+    private Number heart_rate;
+    private Number cadence;
 
     public Record(Number record_id, Number lap_id, String statistic_id, Date timestamp, Number position_lat, Number position_long, Number distance, Number speed, Number altitude, Number heart_rate, Number cadence) {
         this.record_id = record_id;
