@@ -58,13 +58,10 @@ public class OAuthService
     public ResponseEntity<Object> oauthConfirm(String oauthAccessToken) {
         String oAuthConfirmURL = getOAuthConfirmURL(oauthConfirmUrl, oauthAccessToken);
         HttpHeaders httpHeaders = new HttpHeaders();
-        try
-        {
+        try {
             URI uri = new URI(oAuthConfirmURL);
             httpHeaders.setLocation(uri);
-        }
-        catch (URISyntaxException e)
-        {
+        } catch (URISyntaxException e) {
             logger.error("URI syntax error:" + e.getMessage());
         }
         return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);
@@ -77,6 +74,18 @@ public class OAuthService
 
     }
 
+    public void generateAccessToken(String url,String oauthTokenValue) {
+        String accessTokenSecret = tokenProvider.generateAccessTokenSecret(url, oauthTokenValue);
+        if (accessTokenSecret.contains(Consts.OAUTH_TOKEN)) {
+            String[] tokenAndSecret = accessTokenSecret.split(Consts.VARIABLE_DELIMTER);
+            String[] tokenValue = tokenAndSecret[0].split(Consts.VALUE_DELIMTER);
+            String[] secretValue = tokenAndSecret[1].split(Consts.VALUE_DELIMTER);
+            Long id = Long.parseLong(tokenAndSecret[2]);
+            String name = tokenAndSecret[3];
+            tokenDao.saveAccessToken(tokenValue[1], secretValue[1], id, name);
 
+        }
+
+    }
 
 }

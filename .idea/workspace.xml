@@ -2,41 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bab4f8be-4fd5-416c-9c01-4f0b8f60826f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_62.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_14.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_51_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_51_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_51_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_51_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_51_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_51_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_3_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__oauth_signpost_signpost_core_1_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_2_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_2_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/IndexController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/OAuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/TokenDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/TokenProviderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/RequestToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/HttpRequestAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/OAuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/OauthConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/utils/Consts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/utils/TokenSecret.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/UserPartner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userPartner.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coachingmate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/coachingmate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-   
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/IndexController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/OAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/OAuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/TokenDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/TokenDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/TokenProviderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/TokenProviderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Athlete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Badge.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Coach.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Exercise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Group.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Laps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Phase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Planner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Program.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Program_status.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Record.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Session.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Statistic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/OAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/OAuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/OauthConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/OauthConfiguration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +83,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -106,10 +98,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="coachingmateanalytics.coachingmate.entity" />
       <recent name="coachingmateanalytics.coachingmate.utils" />
       <recent name="coachingmateanalytics.coachingmate.service" />
       <recent name="coachingmateanalytics.coachingmate.mapper" />
-      <recent name="coachingmateanalytics.coachingmate.entity" />
       <recent name="coachingmateanalytics.coachingmate.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -177,6 +169,7 @@
       <workItem from="1599571651884" duration="10293000" />
       <workItem from="1599631537667" duration="191000" />
       <workItem from="1599631982766" duration="2247000" />
+      <workItem from="1599653914819" duration="1714000" />
     </task>
     <servers />
   </component>
@@ -197,6 +190,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="2374" y="298" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1599654001622">
+      <screen x="1440" y="-157" width="1920" height="1057" />
+    </state>
+    <state x="2374" y="298" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599654001622" />
     <state x="2186" y="185" width="552" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599627294043">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
@@ -205,45 +202,45 @@
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
     <state x="1872" y="152" width="1309" height="707" key="DiffContextDialog/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1598249786953" />
-    <state width="1599" height="313" key="GridCell.Tab.0.bottom" timestamp="1599634020991">
+    <state width="1498" height="309" key="GridCell.Tab.0.bottom" timestamp="1599657064468">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1599" height="313" key="GridCell.Tab.0.bottom/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599634020991" />
-    <state width="1599" height="313" key="GridCell.Tab.0.center" timestamp="1599634020990">
+    <state width="1498" height="309" key="GridCell.Tab.0.bottom/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599657064468" />
+    <state width="1498" height="309" key="GridCell.Tab.0.center" timestamp="1599657064467">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1599" height="313" key="GridCell.Tab.0.center/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599634020990" />
-    <state width="1599" height="313" key="GridCell.Tab.0.left" timestamp="1599634020989">
+    <state width="1498" height="309" key="GridCell.Tab.0.center/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599657064467" />
+    <state width="1498" height="309" key="GridCell.Tab.0.left" timestamp="1599657064466">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1599" height="313" key="GridCell.Tab.0.left/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599634020989" />
-    <state width="1599" height="313" key="GridCell.Tab.0.right" timestamp="1599634020991">
+    <state width="1498" height="309" key="GridCell.Tab.0.left/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599657064466" />
+    <state width="1498" height="309" key="GridCell.Tab.0.right" timestamp="1599657064467">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1599" height="313" key="GridCell.Tab.0.right/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599634020991" />
-    <state width="1599" height="313" key="GridCell.Tab.1.bottom" timestamp="1599634020993">
+    <state width="1498" height="309" key="GridCell.Tab.0.right/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599657064467" />
+    <state width="1498" height="309" key="GridCell.Tab.1.bottom" timestamp="1599657031017">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1599" height="313" key="GridCell.Tab.1.bottom/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599634020993" />
-    <state width="1599" height="313" key="GridCell.Tab.1.center" timestamp="1599634020992">
+    <state width="1498" height="309" key="GridCell.Tab.1.bottom/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599657031017" />
+    <state width="1498" height="309" key="GridCell.Tab.1.center" timestamp="1599657031016">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1599" height="313" key="GridCell.Tab.1.center/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599634020992" />
-    <state width="1599" height="313" key="GridCell.Tab.1.left" timestamp="1599634020992">
+    <state width="1498" height="309" key="GridCell.Tab.1.center/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599657031016" />
+    <state width="1498" height="309" key="GridCell.Tab.1.left" timestamp="1599657031016">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1599" height="313" key="GridCell.Tab.1.left/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599634020992" />
-    <state width="1599" height="313" key="GridCell.Tab.1.right" timestamp="1599634020993">
+    <state width="1498" height="309" key="GridCell.Tab.1.left/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599657031016" />
+    <state width="1498" height="309" key="GridCell.Tab.1.right" timestamp="1599657031017">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1599" height="313" key="GridCell.Tab.1.right/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599634020993" />
+    <state width="1498" height="309" key="GridCell.Tab.1.right/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599657031017" />
     <state x="1974" y="223" key="Maven.ArtifactSearchDialog" timestamp="1599627090879">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
     <state x="1974" y="223" key="Maven.ArtifactSearchDialog/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599627090879" />
-    <state x="2020" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1599631982672">
+    <state x="2020" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1599653954273">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state x="2020" y="188" key="com.intellij.ide.util.TipDialog/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599631982672" />
+    <state x="2020" y="188" key="com.intellij.ide.util.TipDialog/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599653954273" />
   </component>
 </project>
