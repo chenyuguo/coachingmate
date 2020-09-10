@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * This Controller exercises an implementation of the core oauth process.
@@ -72,7 +69,7 @@ public class OAuthController
             oauthService.generateAccessToken(accessTokenUrl, oauthToken);
         }
         model.addAttribute("userPartners", tokenDao.findAll());
-        return "redirect:/auth/userPartner";
+        return "userPartner";
     }
 
     /**
@@ -108,6 +105,12 @@ public class OAuthController
         } else {
             return "redirect:/auth/requestToken/" + userId + "/" + userName;
         }
+    }
+
+    @GetMapping("test")
+    public String test(Model model){
+        model.addAttribute("userPartners", tokenDao.findAll());
+        return "userPartner";
     }
 
 
