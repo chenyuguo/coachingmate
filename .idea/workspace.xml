@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bab4f8be-4fd5-416c-9c01-4f0b8f60826f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/GarminPushController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +82,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.14648438" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
@@ -168,7 +168,7 @@
       <workItem from="1599719063068" duration="3002000" />
       <workItem from="1599722968866" duration="5481000" />
       <workItem from="1599786635791" duration="5091000" />
-      <workItem from="1599891123816" duration="511000" />
+      <workItem from="1599891123816" duration="1718000" />
     </task>
     <servers />
   </component>
@@ -201,22 +201,22 @@
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
     <state x="1872" y="152" width="1309" height="707" key="DiffContextDialog/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1598249786953" />
-    <state width="1284" height="365" key="GridCell.Tab.0.bottom" timestamp="1599891812702">
+    <state width="1284" height="202" key="GridCell.Tab.0.bottom" timestamp="1599892803369">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1284" height="365" key="GridCell.Tab.0.bottom/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599891812702" />
-    <state width="1284" height="365" key="GridCell.Tab.0.center" timestamp="1599891812701">
+    <state width="1284" height="202" key="GridCell.Tab.0.bottom/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599892803369" />
+    <state width="1284" height="202" key="GridCell.Tab.0.center" timestamp="1599892803368">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1284" height="365" key="GridCell.Tab.0.center/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599891812701" />
-    <state width="1284" height="365" key="GridCell.Tab.0.left" timestamp="1599891812700">
+    <state width="1284" height="202" key="GridCell.Tab.0.center/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599892803368" />
+    <state width="1284" height="202" key="GridCell.Tab.0.left" timestamp="1599892803368">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1284" height="365" key="GridCell.Tab.0.left/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599891812700" />
-    <state width="1284" height="365" key="GridCell.Tab.0.right" timestamp="1599891812701">
+    <state width="1284" height="202" key="GridCell.Tab.0.left/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599892803368" />
+    <state width="1284" height="202" key="GridCell.Tab.0.right" timestamp="1599892803369">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
-    <state width="1284" height="365" key="GridCell.Tab.0.right/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599891812701" />
+    <state width="1284" height="202" key="GridCell.Tab.0.right/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599892803369" />
     <state width="1284" height="365" key="GridCell.Tab.1.bottom" timestamp="1599891812704">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
@@ -237,6 +237,10 @@
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
     <state x="1974" y="223" key="Maven.ArtifactSearchDialog/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599627090879" />
+    <state x="1816" y="51" key="SettingsEditor" timestamp="1599892825945">
+      <screen x="1440" y="-157" width="1920" height="1057" />
+    </state>
+    <state x="1816" y="51" key="SettingsEditor/39.23.1401.877/1440.-157.1920.1057@1440.-157.1920.1057" timestamp="1599892825945" />
     <state x="2020" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1599891123698">
       <screen x="1440" y="-157" width="1920" height="1057" />
     </state>
