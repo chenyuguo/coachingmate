@@ -2,7 +2,7 @@ package coachingmateanalytics.coachingmate.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -15,7 +15,7 @@ import java.util.Map;
  */
 @RestController
 public class LoginController {
-    @PostMapping("/login")
+    @RequestMapping("/login")
     public ResponseEntity<Object> login(String username, String password){
         //@todo do something for identity check
         Map<String, String> body = new HashMap<>();
