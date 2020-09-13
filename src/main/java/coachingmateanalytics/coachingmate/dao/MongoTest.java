@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class MongoTest {
+public class MongoTest implements UserDao {
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -28,7 +28,7 @@ public class MongoTest {
         return user;
     }
 
-    public long updateUser(UserEntity user) {
+    public int updateUser(UserEntity user) {
         Query query=new Query(Criteria.where("id").is(user.getId()));
         Update update= new Update().set("userName", user.getUserName()).set("passWord", user.getPassWord());
         //更新查询返回结果集的第一条
@@ -36,9 +36,15 @@ public class MongoTest {
         //更新查询返回结果集的所有
         // mongoTemplate.updateMulti(query,update,UserEntity.class);
         if(result!=null)
-            return result.getMatchedCount();
+            return (int) result.getMatchedCount();
         else
             return 0;
+    }
+
+    @Override
+    public void deleteUserById(Long id) {
+        Query query=new Query(Criteria.where("id").is(id));
+        mongoTemplate.remove(query,UserEntity.class);
     }
 
 
