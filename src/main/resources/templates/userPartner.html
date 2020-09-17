@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>UserAccessToken Info associated with User</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+	th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+
+</head>
+<body>
+	<div class="container">
+		<div class="page-header" id="banner">
+			<div class="row">
+				<div class="col-lg-8 col-md-7 col-sm-6">
+					<h1>Users</h1>
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>UserId</th>
+								<th>USerName</th>
+								<th>AccessToken</th>
+							</tr>
+						</thead>
+						<tbody border="0">
+							<tr th:each="userPartner :${userPartners}">
+								<td th:text="${userPartner.userId}"></td>
+								<td th:text="${userPartner.userName}"></td>
+								<td th:text="${userPartner.userAccessToken}"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 col-md-7 col-sm-6">
+					<h1>Generate UserAccessToken</h1>
+
+					<form th:action="@{/auth/userAccessToken}" method="post"
+						enctype="multipart/form-data" class="form-horizontal">
+						<fieldset>
+							<div class="form-group">
+								<label class="col-lg-3 control-label">Enter UserId</label>
+								<div class="col-lg-9">
+									<input type="text" class="form-control" name="userId" value="" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-3 control-label">Enter UserName</label>
+								<div class="col-lg-9">
+									<input type="text" class="form-control" name="userName"
+										value="" />
+								</div>
+							</div>
+							<div th:if="*{errorMessage != null}" class="alert alert-danger"
+								th:text="*{errorMessage}"></div>
+							<div class="form-group">
+								<div class="col-lg-12 col-lg-offset-3">
+									<button type="submit" class="btn btn-primary" name="button">GenerateToken</button>
+									<button type="reset" class="btn">Reset</button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

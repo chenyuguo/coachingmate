@@ -37,7 +37,7 @@ public class OauthConfiguration {
 
 	private RestTemplate signedRequestTemplate;
 	private HttpEntity<String> httpEntity;
-	
+
 	@PostConstruct
 	public void init() {
 
@@ -63,7 +63,7 @@ public class OauthConfiguration {
 				return execution.execute(request, body);
 			}
 		}).build();
-		
+
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		httpEntity = new HttpEntity<String>(headers);
@@ -76,7 +76,7 @@ public class OauthConfiguration {
 	public RestTemplate getRestTemplate(String userAccessToken, String userAccessSecret) {
 		this.userAccessToken.set(userAccessToken);
 		this.userAccessSecret.set(userAccessSecret);
-		
+
 		return signedRequestTemplate;
 	}
 
