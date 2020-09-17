@@ -1,11 +1,18 @@
 package coachingmateanalytics.coachingmate.entity;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
 import java.io.Serializable;
 
+@Document(collection = "users")
 public class UserEntity implements Serializable {
     private static final long serialVersionUID = -3258839839160856613L;
+    @Field("id")
     private Long id;
+    @Field("userName")
     private String userName;
+    @Field("password")
     private String passWord;
 
     public Long getId() {

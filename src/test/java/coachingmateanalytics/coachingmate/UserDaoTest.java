@@ -14,14 +14,16 @@ public class UserDaoTest extends AppTest {
     public void testSaveUser() throws Exception {
         UserEntity user=new UserEntity();
         user.setId(2l);
-        user.setUserName("Tao");
+        user.setUserName("tao");
         user.setPassWord("xiaoming1");
         userDao.saveUser(user);
     }
-/*
+
+
+
     @Test
     public void findUserByUserName(){
-        UserEntity user= userDao.findUserByUserName("小明");
+        UserEntity user= userDao.findUserByUserName("tao");
         System.out.println("user is "+user);
     }
 
@@ -39,6 +41,6 @@ public class UserDaoTest extends AppTest {
         userDao.deleteUserById(1l);
     }
 
- */
+
 
 }
