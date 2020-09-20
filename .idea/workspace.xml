@@ -2,40 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bab4f8be-4fd5-416c-9c01-4f0b8f60826f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/GarminPushController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/UserPartner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/intercepter/CustomWebMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/intercepter/SessionIntercepter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/userPartner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coachingmate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/coachingmate.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/Storage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/IndexController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/OAuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/OAuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/TokenDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/TokenDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/TokenProviderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/TokenProviderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Athlete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Badge.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Coach.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Exercise.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Group.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Laps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Phase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Planner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Program.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Program_status.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Record.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Session.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/entity/Statistic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/OAuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/OAuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/OauthConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/service/OauthConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/trigger.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/trigger.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/GarminPushController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/controller/GarminPushController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/MongoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/coachingmateanalytics/coachingmate/dao/MongoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/coachingmateanalytics/coachingmate/UserDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/coachingmateanalytics/coachingmate/UserDaoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

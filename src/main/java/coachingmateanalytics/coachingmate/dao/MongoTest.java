@@ -18,7 +18,7 @@ public class MongoTest implements UserDao {
 
 
     public void saveUser(UserEntity user) {
-        mongoTemplate.save(user);
+        mongoTemplate.save(user, "coachingmate");
     }
 
 
@@ -46,6 +46,5 @@ public class MongoTest implements UserDao {
         Query query=new Query(Criteria.where("id").is(id));
         mongoTemplate.remove(query,UserEntity.class);
     }
-
 
 }
