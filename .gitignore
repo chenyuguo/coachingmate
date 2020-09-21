@@ -29,3 +29,6 @@ target/
 coachingmate.iml
 mvnw.cmd
 HELP.md
+public/
+src/main/resources/trigger.txt
+
