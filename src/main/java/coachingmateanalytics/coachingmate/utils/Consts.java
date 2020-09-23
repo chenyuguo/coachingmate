@@ -28,5 +28,6 @@ public final class Consts
     public static final String EVENT_PUSH = "eventpush";
     public static final String WARNING_MESSAGE = "Summarydata is not available";
     public static final String TIME_STAMP ="timeStamp";
+    public static final String MONGODB_TOKEN_COLLECTIN_NAME="requestToken";
 
 }

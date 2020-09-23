@@ -2,7 +2,10 @@ package coachingmateanalytics.coachingmate.dao;
 
 import coachingmateanalytics.coachingmate.entity.RequestToken;
 import coachingmateanalytics.coachingmate.entity.UserPartner;
+import coachingmateanalytics.coachingmate.utils.Consts;
 import com.alibaba.fastjson.JSON;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -15,12 +18,13 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @Auther: Saul
  * @Date: 9/9/20 15:40
  * @Description:
  */
 @Component
 public class TokenDao {
+    private static final Logger logger = LoggerFactory.getLogger(TokenDao.class);
+
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 
@@ -29,14 +33,14 @@ public class TokenDao {
 
 
     // It stores request token and secret in the requestToken Repo
-    public RequestToken saveRequestToken(long userId, String userName, String token, String secret) {
+    public RequestToken saveRequestToken(String userName, String token, String secret) {
         RequestToken reqToken = new RequestToken();
         reqToken.setToken(token);
         reqToken.setSecret(secret);
-        reqToken.setUserId(userId);
         reqToken.setUserName(userName);
         try {
             redisTemplate.opsForValue().set(token, JSON.toJSONString(reqToken));
+            mongoTemplate.save(JSON.toJSONString(reqToken), Consts.MONGODB_TOKEN_COLLECTIN_NAME);
             return reqToken;
         } catch (Exception e) {
             e.printStackTrace();

@@ -40,10 +40,10 @@ public class OAuthController
      * so the user can enter their Garmin Connect username and password.
      * @return A ResponseEntity sending the user to the manual oauthConfirm page.
      */
-    @RequestMapping("/requestToken/{userId}/{userName}")
-    public ResponseEntity<Object> oauthRequestToken(@PathVariable long userId, @PathVariable String userName) {
+    @RequestMapping("/requestToken/{userName}")
+    public ResponseEntity<Object> oauthRequestToken(@PathVariable String userName) {
         ResponseEntity<Object> responseObject = null;
-        RequestToken reqToken = oauthService.getRequestToken(requestTokenUrl,userId,userName);
+        RequestToken reqToken = oauthService.getRequestToken(requestTokenUrl,userName);
 
         if (reqToken != null)
         {

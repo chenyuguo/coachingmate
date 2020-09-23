@@ -129,7 +129,9 @@ public class GarminPushController {
 
     //configure this url to enpoint configuration, and the garmin endpoint will transfer the data to this server
     @PostMapping("/push1")
-    public ResponseEntity acceptPushedFile1(HttpServletRequest request) {
+    public ResponseEntity acceptPushedFile1(MultipartFile file) {
+
+        /**
         logger.info("start push data");
 
         MultipartHttpServletRequest params=(MultipartHttpServletRequest) request;
@@ -161,6 +163,16 @@ public class GarminPushController {
                 return ResponseEntity.status(503).headers(httpHeaders).body("Failed to process. Reason : " +"file is empty");
             }
         }
+
+         **/
+        File file1 = new File(storePath + file.getOriginalFilename()+".json");
+        try {
+            file1.createNewFile();
+            file.transferTo(file1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.set("Location", "public/garmin_raw");
         return ResponseEntity.accepted().headers(httpHeaders).body("Accept the pushed file");
@@ -186,17 +198,25 @@ public class GarminPushController {
     }
 
     public static void storeFileinpath(MultipartFile file ) throws IOException {
-        PrintStream printer = null;
-        BufferedOutputStream stream = null;
-        byte[] bytes = file.getBytes();
-        stream = new BufferedOutputStream(new FileOutputStream(
-                new File(storePath + file.getOriginalFilename() + ".json")));
-        printer = new PrintStream(stream);
+//        PrintStream printer = null;
+//        BufferedOutputStream stream = null;
+//        byte[] bytes = file.getBytes();
+//        stream = new BufferedOutputStream(new FileOutputStream(
+//                new File(storePath + file.getOriginalFilename())));
+////        printer = new PrintStream(stream);
 //                    stream.write(bytes);
-        String s = new String(bytes);
-        printer.println(s);
-        stream.close();
-        printer.close();
+////        String s = new String(bytes);
+////        printer.println(s);
+//        stream.close();
+////        printer.close();
+
+
+        File file1 = new File(storePath + file.getOriginalFilename());
+        file1.createNewFile();
+        file.transferTo(file1);
+
 
     }
+
+
 }
