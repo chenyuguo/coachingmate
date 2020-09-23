@@ -1,10 +1,13 @@
 package coachingmateanalytics.coachingmate.controller;
 
 import coachingmateanalytics.coachingmate.dao.TokenDao;
+import coachingmateanalytics.coachingmate.dao.UserDao;
 import coachingmateanalytics.coachingmate.entity.RequestToken;
 import coachingmateanalytics.coachingmate.entity.UserPartner;
 import coachingmateanalytics.coachingmate.service.OAuthService;
 import coachingmateanalytics.coachingmate.utils.Consts;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -19,13 +22,14 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 @RequestMapping("/auth")
-public class OAuthController
-{
+public class OAuthController {
+    private static final Logger logger = LoggerFactory.getLogger(OAuthController.class);
+
     @Autowired
     OAuthService oauthService;
 
     @Autowired
-    TokenDao tokenDao;
+    UserDao userDao;
 
     //The Garmin Connect API Oauth request_token URL
     @Value("${requestToken.url}")
@@ -40,16 +44,15 @@ public class OAuthController
      * so the user can enter their Garmin Connect username and password.
      * @return A ResponseEntity sending the user to the manual oauthConfirm page.
      */
-    @RequestMapping("/requestToken/{userName}")
-    public ResponseEntity<Object> oauthRequestToken(@PathVariable String userName) {
-        ResponseEntity<Object> responseObject = null;
-        RequestToken reqToken = oauthService.getRequestToken(requestTokenUrl,userName);
-
-        if (reqToken != null)
-        {
-            responseObject = oauthService.oauthConfirm(reqToken.getToken());
+    @RequestMapping("/requestToken/{username}")
+    public ResponseEntity<String> oauthRequestToken(@PathVariable String username) {
+        RequestToken reqToken = oauthService.getRequestToken(requestTokenUrl, username);
+        String result = "";
+        if (reqToken != null) {
+            result  = oauthService.getOAuthConfirmURL(reqToken.getToken());
+            logger.info("the redirect url : " + result);
         }
-        return responseObject;
+        return ResponseEntity.ok(result);
     }
 
     /**
@@ -58,60 +61,35 @@ public class OAuthController
      * to your program.
      * @param oauthToken
      * @param oauthVerifierValue
-     * @param model
      * @return
      */
     @RequestMapping("/accessToken")
-    String oauthAccessToken(@RequestParam(value = "oauth_token") String oauthToken,
-                            @RequestParam(value = "oauth_verifier") String oauthVerifierValue, Model model) {
+    void oauthAccessToken(@RequestParam(value = "oauth_token") String oauthToken,
+                            @RequestParam(value = "oauth_verifier") String oauthVerifierValue) {
         if (oauthVerifierValue != null && !oauthVerifierValue.isEmpty()) {
             String accessTokenUrl = oauthAccessTokenUrl + Consts.URL_DELIMTER + Consts.OAUTH_VERIFIER + Consts.VALUE_DELIMTER+ oauthVerifierValue;
             oauthService.generateAccessToken(accessTokenUrl, oauthToken);
         }
-        model.addAttribute("userPartners", tokenDao.findAll());
-        return "userPartner";
     }
 
-    /**
-     * A convenience page to display a list of all current users opted in to this program.
-     * This should not be part of your actual implementation!
-     * @param model
-     * @return
-     */
-    @RequestMapping(value = "/userPartner", method = RequestMethod.GET)
-    public String usersList(Model model)
-    {
-        model.addAttribute("userPartners", tokenDao.findAll());
-        return "userPartner";
-    }
+
 
 
     /**
      * A convenience endpoint to display user data if it exists, or generate it if it doesn't.
      * It just calls all of the above functionality.
      * This should not be part of your actual implementation!
-     * @param userId
-     * @param userName
-     * @param model
+     * @param username
      * @return
      */
     @RequestMapping(value = "/userAccessToken", method = RequestMethod.POST)
-    public String generateToken(@RequestParam Long userId, @RequestParam String userName, Model model) {
-        UserPartner userPartner = tokenDao.findOne(userId);
-        if (userPartner != null) {
-            String str = Consts.ERROR_MSG + userId;
-            model.addAttribute("errorMessage", str);
-            return usersList(model);
+    public String generateToken(@RequestParam String username) {
+        UserPartner userPartner = userDao.findUserByUserName(username);
+        if (userPartner.getUserAccessToken() != null) {
+            return userPartner.getUsername();
         } else {
-            return "redirect:/auth/requestToken/" + userId + "/" + userName;
+            return "redirect:/auth/requestToken/" + username;
         }
     }
-
-    @GetMapping("test")
-    public String test(Model model){
-        model.addAttribute("userPartners", tokenDao.findAll());
-        return "userPartner";
-    }
-
 
 }

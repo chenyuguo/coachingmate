@@ -1,17 +1,14 @@
 package coachingmateanalytics.coachingmate.dao;
 
 
-import coachingmateanalytics.coachingmate.entity.UserEntity;
+import coachingmateanalytics.coachingmate.entity.UserPartner;
 
 public interface UserDao  {
 
-    public void saveUser(UserEntity user);
-    public void saveActivityFile(String activity);
-
-    public UserEntity findUserByUserName(String userName);
-
-    public int updateUser(UserEntity user);
-
-    public void deleteUserById(Long id);
+     void saveUser(UserPartner user);
+     void saveActivityFile(String activity);
+     UserPartner findUserByUserName(String username);
+     int updateUser(UserPartner user);
+     void deleteUserById(Long id);
 
 }

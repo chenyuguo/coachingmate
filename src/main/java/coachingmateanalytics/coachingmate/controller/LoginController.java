@@ -1,5 +1,8 @@
 package coachingmateanalytics.coachingmate.controller;
 
+import coachingmateanalytics.coachingmate.entity.UserPartner;
+import coachingmateanalytics.coachingmate.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,11 +18,14 @@ import java.util.Map;
  */
 @Controller
 public class LoginController {
+
+    @Autowired
+    UserService userService;
+
     @RequestMapping("/login")
-    public ResponseEntity<Object> login(String username, String password){
-        //@todo do something for identity check
-        Map<String, String> body = new HashMap<>();
-        body.put("username",username);
-        return new ResponseEntity<>(body, HttpStatus.OK);
+    public ResponseEntity<UserPartner> login(String username, String password){
+        UserPartner userPartner = userService.loginCheck(username, password);
+        if (userPartner == null) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+        return new ResponseEntity<>(userPartner, HttpStatus.OK);
     }
 }

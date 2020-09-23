@@ -21,7 +21,6 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 
 @Service
-@Component
 public class OauthConfiguration {
 
 	// Your Health API Consumer Key

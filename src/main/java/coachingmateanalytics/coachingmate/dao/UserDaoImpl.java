@@ -1,7 +1,9 @@
 package coachingmateanalytics.coachingmate.dao;
 
 
-import coachingmateanalytics.coachingmate.entity.UserEntity;
+import coachingmateanalytics.coachingmate.entity.UserPartner;
+import coachingmateanalytics.coachingmate.utils.Consts;
+import com.alibaba.fastjson.JSON;
 import com.mongodb.client.result.UpdateResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -12,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class MongoTest implements UserDao {
+public class UserDaoImpl implements UserDao {
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -22,8 +24,8 @@ public class MongoTest implements UserDao {
      * @param user
      * @return {@link }
      */
-    public void saveUser(UserEntity user) {
-        mongoTemplate.save(user, "coachingmate");
+    public void saveUser(UserPartner user) {
+        mongoTemplate.save(JSON.toJSONString(user), Consts.MONGODB_USER_COLLECTIN_NAME);
     }
 
     /***
@@ -33,21 +35,20 @@ public class MongoTest implements UserDao {
      * @return {@link }
      */
     public void saveActivityFile(String activity){
-        mongoTemplate.save(activity, "activity");
+        mongoTemplate.save(activity, Consts.MONGODB_ACTIVITY_COLLECTIN_NAME);
     }
 
-
-    public UserEntity findUserByUserName(String userName) {
+    public UserPartner findUserByUserName(String userName) {
         Query query=new Query(Criteria.where("userName").is(userName));
-        UserEntity user =  mongoTemplate.findOne(query , UserEntity.class);
+        UserPartner user =  mongoTemplate.findOne(query , UserPartner.class);
         return user;
     }
 
-    public int updateUser(UserEntity user) {
-        Query query=new Query(Criteria.where("id").is(user.getId()));
-        Update update= new Update().set("userName", user.getUserName()).set("passWord", user.getPassWord());
+    public int updateUser(UserPartner user) {
+        Query query=new Query(Criteria.where("id").is(user.getUserId()));
+        Update update= new Update().set("userName", user.getUsername()).set("passWord", user.getPassword());
         //更新查询返回结果集的第一条
-        UpdateResult result =mongoTemplate.updateFirst(query,update,UserEntity.class);
+        UpdateResult result =mongoTemplate.updateFirst(query,update,UserPartner.class);
         //更新查询返回结果集的所有
         // mongoTemplate.updateMulti(query,update,UserEntity.class);
         if(result!=null)
@@ -59,7 +60,7 @@ public class MongoTest implements UserDao {
     @Override
     public void deleteUserById(Long id) {
         Query query=new Query(Criteria.where("id").is(id));
-        mongoTemplate.remove(query,UserEntity.class);
+        mongoTemplate.remove(query,UserPartner.class);
     }
 
 }

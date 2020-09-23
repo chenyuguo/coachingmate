@@ -8,6 +8,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -25,62 +28,35 @@ import java.util.Set;
 public class TokenDao {
     private static final Logger logger = LoggerFactory.getLogger(TokenDao.class);
 
-    @Resource
-    private RedisTemplate<String, Object> redisTemplate;
-
     @Autowired
     private MongoTemplate mongoTemplate;
 
-
     // It stores request token and secret in the requestToken Repo
-    public RequestToken saveRequestToken(String userName, String token, String secret) {
-        RequestToken reqToken = new RequestToken();
-        reqToken.setToken(token);
-        reqToken.setSecret(secret);
-        reqToken.setUserName(userName);
+    public RequestToken saveRequestToken(String username, String token, String secret) {
+        RequestToken reqToken = new RequestToken(username,token,secret);
         try {
-            redisTemplate.opsForValue().set(token, JSON.toJSONString(reqToken));
             mongoTemplate.save(JSON.toJSONString(reqToken), Consts.MONGODB_TOKEN_COLLECTIN_NAME);
             return reqToken;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
             return null;
         }
     }
 
     public RequestToken findByToken(String reqToken){
-        String o = (String)redisTemplate.opsForValue().get(reqToken);
-        return JSON.parseObject(o, RequestToken.class);
+        Query query = Query.query(Criteria.where("token").is(reqToken));
+        RequestToken token = mongoTemplate.findOne(query, RequestToken.class, Consts.MONGODB_TOKEN_COLLECTIN_NAME);
+        return token;
     }
-
 
 
     // It stores user access token with the user name.
-    public void saveAccessToken(String token, String secret, Long userId, String userName) {
-        UserPartner newUser = new UserPartner();
-        newUser.setUserId(userId);
-        newUser.setUserName(userName);
-        newUser.setUserAccessToken(token);
-        newUser.setUserAccessSecret(secret);
-        redisTemplate.opsForHash().put("userPartners", userId, JSON.toJSONString(newUser));
+    public void saveAccessToken(String token, String secret, Long userId, String username) {
+        Query query = Query.query(Criteria.where("username").is(username));
+        Update update = Update.update("userAccessToken", token).set("userAccessSecret", secret);
+        mongoTemplate.updateFirst(query, update, UserPartner.class, Consts.MONGODB_USER_COLLECTIN_NAME);
     }
 
-    public UserPartner findOne(long userId){
-        String userPartners = (String) redisTemplate.opsForHash().get("userPartners", userId);
-        return JSON.parseObject(userPartners, UserPartner.class);
-    }
-
-    // it returns all UserPartner
-    public List<UserPartner> findAll(){
-        Map<Object, Object> userPartners = redisTemplate.opsForHash().entries("userPartners");
-        List<UserPartner> res = new LinkedList<>();
-        Set<Map.Entry<Object, Object>> entries = userPartners.entrySet();
-        for (Map.Entry<Object, Object> entry : entries) {
-            String value = (String) entry.getValue();
-            res.add(JSON.parseObject(value, UserPartner.class));
-        }
-        return res;
-    }
 }
 
 

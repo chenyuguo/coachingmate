@@ -53,7 +53,7 @@ public class TokenProviderDao
             logger.error(e.getMessage());
         }
 
-        return accessTokenSecret + Consts.VARIABLE_DELIMTER + reqToken.getUserId() + Consts.VARIABLE_DELIMTER + reqToken.getUserName();
+        return accessTokenSecret + Consts.VARIABLE_DELIMTER + reqToken.getId() + Consts.VARIABLE_DELIMTER + reqToken.getUsername();
     }
 
 

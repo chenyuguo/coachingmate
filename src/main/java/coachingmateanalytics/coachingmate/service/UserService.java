@@ -1,6 +1,7 @@
 package coachingmateanalytics.coachingmate.service;
 
-import coachingmateanalytics.coachingmate.entity.UserEntity;
+
+import coachingmateanalytics.coachingmate.entity.UserPartner;
 
 /**
  * @Auther: Saul
@@ -8,5 +9,6 @@ import coachingmateanalytics.coachingmate.entity.UserEntity;
  * @Description:
  */
 public interface UserService {
-
+    UserPartner loginCheck(String username, String password);
+    UserPartner register(String username, String password);
 }

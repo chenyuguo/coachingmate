@@ -2,7 +2,7 @@ package coachingmateanalytics.coachingmate.entity;
 
 public class UserPartner {
 	private long userId;
-	private String userName;
+	private String username;
 	private String userAccessToken;
 	private String userAccessSecret;
 	private String password;
@@ -19,23 +19,23 @@ public class UserPartner {
 		super();
 	}
 
-	public UserPartner(String userName, String userAccessToken) {
+	public UserPartner(String username, String userAccessToken) {
 		super();
-		this.userName = userName;
+		this.username = username;
 		this.userAccessToken = userAccessToken;
 
 	}
-	public UserPartner(String userName, String userAccessToken, String userAccessSecret) {
+	public UserPartner(String username, String userAccessToken, String userAccessSecret) {
 		super();
-		this.userName = userName;
+		this.username = username;
 		this.userAccessToken = userAccessToken;
 		this.userAccessSecret = userAccessSecret;
 
 	}
 
-	public UserPartner(long userId, String userName, String userAccessToken, String userAccessSecret, String password) {
+	public UserPartner(long userId, String username, String userAccessToken, String userAccessSecret, String password) {
 		this.userId = userId;
-		this.userName = userName;
+		this.username = username;
 		this.userAccessToken = userAccessToken;
 		this.userAccessSecret = userAccessSecret;
 		this.password = password;
@@ -49,12 +49,12 @@ public class UserPartner {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getUserAccessToken() {
@@ -76,7 +76,7 @@ public class UserPartner {
 	@Override
 	    public String toString()
 	    {
-	        return "UserPartner [userId=" + userId + ", userName=" + userName + ", userAccessToken=" + userAccessToken
+	        return "UserPartner [userId=" + userId + ", userName=" + username + ", userAccessToken=" + userAccessToken
 	                + ", userAccessSecret=" + userAccessSecret + "]";
 	    }
 	    
