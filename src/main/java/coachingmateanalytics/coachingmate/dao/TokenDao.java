@@ -3,6 +3,8 @@ package coachingmateanalytics.coachingmate.dao;
 import coachingmateanalytics.coachingmate.entity.RequestToken;
 import coachingmateanalytics.coachingmate.entity.UserPartner;
 import com.alibaba.fastjson.JSON;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +23,10 @@ import java.util.Set;
 public class TokenDao {
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
 
     // It stores request token and secret in the requestToken Repo
     public RequestToken saveRequestToken(long userId, String userName, String token, String secret) {

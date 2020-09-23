@@ -16,9 +16,24 @@ public class MongoTest implements UserDao {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-
+    /***
+     * @Description test remote mongodb using collection name
+     * @Date 23:24 22/9/20
+     * @param user
+     * @return {@link }
+     */
     public void saveUser(UserEntity user) {
         mongoTemplate.save(user, "coachingmate");
+    }
+
+    /***
+     * @Description  use to test the garmin connect push feature
+     * @Date 23:24 22/9/20
+     * @param activity
+     * @return {@link }
+     */
+    public void saveActivityFile(String activity){
+        mongoTemplate.save(activity, "activity");
     }
 
 

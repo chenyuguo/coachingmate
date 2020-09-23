@@ -5,6 +5,7 @@ public class UserPartner {
 	private String userName;
 	private String userAccessToken;
 	private String userAccessSecret;
+	private String password;
 
 	public String getUserAccessSecret() {
 		return userAccessSecret;
@@ -31,7 +32,15 @@ public class UserPartner {
 		this.userAccessSecret = userAccessSecret;
 
 	}
-	
+
+	public UserPartner(long userId, String userName, String userAccessToken, String userAccessSecret, String password) {
+		this.userId = userId;
+		this.userName = userName;
+		this.userAccessToken = userAccessToken;
+		this.userAccessSecret = userAccessSecret;
+		this.password = password;
+	}
+
 	public long getUserId() {
 		return userId;
 	}
@@ -55,7 +64,16 @@ public class UserPartner {
 	public void setUserAccessToken(String userAccessToken) {
 		this.userAccessToken = userAccessToken;
 	}
-	  @Override
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@Override
 	    public String toString()
 	    {
 	        return "UserPartner [userId=" + userId + ", userName=" + userName + ", userAccessToken=" + userAccessToken

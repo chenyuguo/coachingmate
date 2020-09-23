@@ -46,8 +46,7 @@ public class OAuthService
             String[] tokenAndSecret = reqTokenSecret.split(Consts.VARIABLE_DELIMTER);
             String[] tokenValue = tokenAndSecret[0].split(Consts.VALUE_DELIMTER);
             String[] secretValue = tokenAndSecret[1].split(Consts.VALUE_DELIMTER);
-            // storing generated requestToken ,requestTokenSecret for user. Here we implemented
-            // in-memory database
+            // storing generated requestToken ,requestTokenSecret for user.
             RequestToken reqToken = tokenDao.saveRequestToken(userId, userName, tokenValue[1], secretValue[1]);
             return reqToken;
         } else {
