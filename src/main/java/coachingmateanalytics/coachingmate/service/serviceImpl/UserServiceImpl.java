@@ -20,13 +20,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserPartner loginCheck(String username, String password) {
-        UserPartner userPartner = userDao.findUserByUserName(username);
+        UserPartner userPartner = userDao.findUserByUsername(username);
         return userPartner;
     }
 
     @Override
     public UserPartner register(String username, String password) {
-        UserPartner userPartner = userDao.findUserByUserName(username);
+        UserPartner userPartner = userDao.findUserByUsername(username);
         if(userPartner != null) return null;
         Random random = new Random(901920392323l);
         UserPartner newUserPartner = new UserPartner();

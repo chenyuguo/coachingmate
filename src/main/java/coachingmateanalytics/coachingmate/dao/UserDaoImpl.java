@@ -25,42 +25,26 @@ public class UserDaoImpl implements UserDao {
      * @return {@link }
      */
     public void saveUser(UserPartner user) {
-        mongoTemplate.save(JSON.toJSONString(user), Consts.MONGODB_USER_COLLECTIN_NAME);
+        mongoTemplate.save(user, Consts.MONGODB_USER_COLLECTIN_NAME);
     }
 
-    /***
-     * @Description  use to test the garmin connect push feature
-     * @Date 23:24 22/9/20
-     * @param activity
-     * @return {@link }
-     */
-    public void saveActivityFile(String activity){
-        mongoTemplate.save(activity, Consts.MONGODB_ACTIVITY_COLLECTIN_NAME);
-    }
-
-    public UserPartner findUserByUserName(String userName) {
-        Query query=new Query(Criteria.where("userName").is(userName));
-        UserPartner user =  mongoTemplate.findOne(query , UserPartner.class);
+    public UserPartner findUserByUsername(String username) {
+        Query query=new Query(Criteria.where("username").is(username));
+        UserPartner user =  mongoTemplate.findOne(query , UserPartner.class,Consts.MONGODB_USER_COLLECTIN_NAME);
         return user;
     }
 
     public int updateUser(UserPartner user) {
-        Query query=new Query(Criteria.where("id").is(user.getUserId()));
-        Update update= new Update().set("userName", user.getUsername()).set("passWord", user.getPassword());
-        //更新查询返回结果集的第一条
-        UpdateResult result =mongoTemplate.updateFirst(query,update,UserPartner.class);
-        //更新查询返回结果集的所有
-        // mongoTemplate.updateMulti(query,update,UserEntity.class);
-        if(result!=null)
-            return (int) result.getMatchedCount();
-        else
-            return 0;
+        Query query=new Query(Criteria.where("username").is(user.getUsername()));
+        Update update= Update.update("userAccessToken", user.getUserAccessToken()).set("userAccessSecret", user.getUserAccessSecret());
+        UpdateResult result =mongoTemplate.updateMulti(query,update,UserPartner.class,Consts.MONGODB_USER_COLLECTIN_NAME);
+        return (int) result.getMatchedCount();
     }
 
     @Override
-    public void deleteUserById(Long id) {
-        Query query=new Query(Criteria.where("id").is(id));
-        mongoTemplate.remove(query,UserPartner.class);
+    public void deleteUserByUsername(String username) {
+        Query query=new Query(Criteria.where("username").is(username));
+        mongoTemplate.remove(query,UserPartner.class,Consts.MONGODB_USER_COLLECTIN_NAME);
     }
 
 }

@@ -3,7 +3,6 @@ package coachingmateanalytics.coachingmate.entity;
 
 public class RequestToken {
 
-	private long id;
 	private String username;
 	private String token;
 	private String secret;
@@ -27,13 +26,6 @@ public class RequestToken {
 		this.username = username;
 	}
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getToken() {
 		return token;
@@ -54,8 +46,7 @@ public class RequestToken {
 	@Override
 	public String toString() {
 		return "RequestToken{" +
-				"id=" + id +
-				", username='" + username + '\'' +
+				"username='" + username + '\'' +
 				", token='" + token + '\'' +
 				", secret='" + secret + '\'' +
 				'}';

@@ -51,7 +51,7 @@ public class TokenDao {
 
 
     // It stores user access token with the user name.
-    public void saveAccessToken(String token, String secret, Long userId, String username) {
+    public void saveAccessToken(String token, String secret, String username) {
         Query query = Query.query(Criteria.where("username").is(username));
         Update update = Update.update("userAccessToken", token).set("userAccessSecret", secret);
         mongoTemplate.updateFirst(query, update, UserPartner.class, Consts.MONGODB_USER_COLLECTIN_NAME);

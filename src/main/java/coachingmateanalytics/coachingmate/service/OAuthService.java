@@ -58,9 +58,8 @@ public class OAuthService {
             String[] tokenAndSecret = accessTokenSecret.split(Consts.VARIABLE_DELIMTER);
             String[] tokenValue = tokenAndSecret[0].split(Consts.VALUE_DELIMTER);
             String[] secretValue = tokenAndSecret[1].split(Consts.VALUE_DELIMTER);
-            Long id = Long.parseLong(tokenAndSecret[2]);
-            String name = tokenAndSecret[3];
-            tokenDao.saveAccessToken(tokenValue[1], secretValue[1], id, name);
+            String name = tokenAndSecret[2];
+            tokenDao.saveAccessToken(tokenValue[1], secretValue[1], name);
         }
 
     }

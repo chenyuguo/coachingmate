@@ -1,6 +1,5 @@
 package coachingmateanalytics.coachingmate.controller;
 
-import coachingmateanalytics.coachingmate.dao.TokenDao;
 import coachingmateanalytics.coachingmate.dao.UserDao;
 import coachingmateanalytics.coachingmate.entity.RequestToken;
 import coachingmateanalytics.coachingmate.entity.UserPartner;
@@ -12,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -84,7 +82,7 @@ public class OAuthController {
      */
     @RequestMapping(value = "/userAccessToken", method = RequestMethod.POST)
     public String generateToken(@RequestParam String username) {
-        UserPartner userPartner = userDao.findUserByUserName(username);
+        UserPartner userPartner = userDao.findUserByUsername(username);
         if (userPartner.getUserAccessToken() != null) {
             return userPartner.getUsername();
         } else {
