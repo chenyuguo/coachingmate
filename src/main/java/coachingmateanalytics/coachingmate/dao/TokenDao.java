@@ -35,7 +35,7 @@ public class TokenDao {
     public RequestToken saveRequestToken(String username, String token, String secret) {
         RequestToken reqToken = new RequestToken(username,token,secret);
         try {
-            mongoTemplate.save(JSON.toJSONString(reqToken), Consts.MONGODB_TOKEN_COLLECTIN_NAME);
+            mongoTemplate.save(reqToken, Consts.MONGODB_TOKEN_COLLECTIN_NAME);
             return reqToken;
         } catch (Exception e) {
             logger.error(e.getMessage());
@@ -54,7 +54,7 @@ public class TokenDao {
     public void saveAccessToken(String token, String secret, String username) {
         Query query = Query.query(Criteria.where("username").is(username));
         Update update = Update.update("userAccessToken", token).set("userAccessSecret", secret);
-        mongoTemplate.updateFirst(query, update, UserPartner.class, Consts.MONGODB_USER_COLLECTIN_NAME);
+        mongoTemplate.updateMulti(query, update, UserPartner.class, Consts.MONGODB_USER_COLLECTIN_NAME);
     }
 
 }

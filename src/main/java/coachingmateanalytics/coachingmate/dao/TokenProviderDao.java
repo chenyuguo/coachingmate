@@ -52,7 +52,6 @@ public class TokenProviderDao
         catch(Exception e){
             logger.error(e.getMessage());
         }
-
         return accessTokenSecret + Consts.VARIABLE_DELIMTER + reqToken.getUsername();
     }
 
