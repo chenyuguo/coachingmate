@@ -62,15 +62,14 @@ public class OAuthController {
      * @return
      */
     @RequestMapping("/accessToken")
-    void oauthAccessToken(@RequestParam(value = "oauth_token") String oauthToken,
+    public ResponseEntity<String> oauthAccessToken(@RequestParam(value = "oauth_token") String oauthToken,
                             @RequestParam(value = "oauth_verifier") String oauthVerifierValue) {
         if (oauthVerifierValue != null && !oauthVerifierValue.isEmpty()) {
             String accessTokenUrl = oauthAccessTokenUrl + Consts.URL_DELIMTER + Consts.OAUTH_VERIFIER + Consts.VALUE_DELIMTER+ oauthVerifierValue;
             oauthService.generateAccessToken(accessTokenUrl, oauthToken);
         }
+        return ResponseEntity.ok("get the access token");
     }
-
-
 
 
     /**

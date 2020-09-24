@@ -1,6 +1,5 @@
 package coachingmateanalytics.coachingmate;
 
-import coachingmateanalytics.coachingmate.controller.GarminPushController;
 import coachingmateanalytics.coachingmate.dao.UserDao;
 import coachingmateanalytics.coachingmate.entity.UserPartner;
 import org.junit.Test;

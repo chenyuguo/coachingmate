@@ -1,23 +1,22 @@
 package coachingmateanalytics.coachingmate.dao;
 
 import coachingmateanalytics.coachingmate.AppTest;
-import coachingmateanalytics.coachingmate.UserDaoTest;
+import coachingmateanalytics.coachingmate.dao.ActivityDao;
 import coachingmateanalytics.coachingmate.entity.Activity;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Date: 24/9/20 12:04
  * @Description:
  */
 class ActivityDaoImplTest extends AppTest {
-    private static final Logger logger = LoggerFactory.getLogger(UserDaoTest.class);
+    private static final Logger logger = LoggerFactory.getLogger(ActivityDaoImplTest.class);
 
     @Autowired
     private ActivityDao activityDao;
