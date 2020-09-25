@@ -2,6 +2,8 @@ package coachingmateanalytics.coachingmate.controller;
 
 import coachingmateanalytics.coachingmate.entity.Activity;
 import coachingmateanalytics.coachingmate.service.ActivityService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/activity")
 public class ActivityDataRetrieveController {
+    private static final Logger logger = LoggerFactory.getLogger(ActivityDataRetrieveController.class);
 
     @Autowired
     ActivityService activityService;

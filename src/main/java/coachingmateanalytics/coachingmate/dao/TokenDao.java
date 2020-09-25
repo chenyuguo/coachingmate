@@ -3,7 +3,6 @@ package coachingmateanalytics.coachingmate.dao;
 import coachingmateanalytics.coachingmate.entity.RequestToken;
 import coachingmateanalytics.coachingmate.entity.UserPartner;
 import coachingmateanalytics.coachingmate.utils.Consts;
-import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +10,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.Resource;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * @Date: 9/9/20 15:40

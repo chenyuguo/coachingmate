@@ -13,6 +13,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * This Controller exercises an implementation of the core oauth process.
  *
@@ -42,15 +45,18 @@ public class OAuthController {
      * so the user can enter their Garmin Connect username and password.
      * @return A ResponseEntity sending the user to the manual oauthConfirm page.
      */
-    @RequestMapping("/requestToken/{username}")
-    public ResponseEntity<String> oauthRequestToken(@PathVariable String username) {
+    @RequestMapping("/requestToken")
+    public ResponseEntity<Map<String, String>> oauthRequestToken(String username) {
+        logger.info("user " + username + "request token");
         RequestToken reqToken = oauthService.getRequestToken(requestTokenUrl, username);
         String result = "";
         if (reqToken != null) {
             result  = oauthService.getOAuthConfirmURL(reqToken.getToken());
             logger.info("the redirect url : " + result);
         }
-        return ResponseEntity.ok(result);
+        Map<String, String> map = new HashMap<>();
+        map.put("url", result);
+        return ResponseEntity.accepted().body(map);
     }
 
     /**
@@ -62,13 +68,13 @@ public class OAuthController {
      * @return
      */
     @RequestMapping("/accessToken")
-    public ResponseEntity<String> oauthAccessToken(@RequestParam(value = "oauth_token") String oauthToken,
+    public String oauthAccessToken(@RequestParam(value = "oauth_token") String oauthToken,
                             @RequestParam(value = "oauth_verifier") String oauthVerifierValue) {
         if (oauthVerifierValue != null && !oauthVerifierValue.isEmpty()) {
-            String accessTokenUrl = oauthAccessTokenUrl + Consts.URL_DELIMTER + Consts.OAUTH_VERIFIER + Consts.VALUE_DELIMTER+ oauthVerifierValue;
+            String accessTokenUrl = oauthAccessTokenUrl + Consts.URL_DELIMTER + Consts.OAUTH_VERIFIER + Consts.VALUE_DELIMTER + oauthVerifierValue;
             oauthService.generateAccessToken(accessTokenUrl, oauthToken);
         }
-        return ResponseEntity.ok("get the access token");
+        return "authoriseSuccess";
     }
 
 
