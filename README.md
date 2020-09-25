@@ -1,26 +1,9 @@
-# coachingmate
- This is a unimelb project of subject COMP90082.
- this module is responsible for acquiring and processing data.
- Data collected in Garmin Connect is acquired through Garmin wearable 
- devices used by athletes training under CoachingMate.
- 
- # the package introduction
- 
- - config: the configuration class
- - controller: provide interface for front end
- - domain: includes all the entity class
- - exception: is responsible for catching and responsing exceptions
- - logs : define where logs are needed
- - mapper : interact with database
- - service : responsible for business logic
- - utils : encapsulate some useful tools
- - test : unit test module
-
-
 ## Project Name & Pitch 
 Coachmate
 
 An application used to connect the Garmin connect and retrieve activity data, built with Springboot framework.
+This is a unimelb project of subject COMP90082 which is responsible for acquiring and processing data.
+ Data collected in Garmin Connect is acquired through Garmin wearable. devices used by athletes training under CoachingMate.
 
 ## Project Status
 
@@ -28,7 +11,14 @@ This project is currently in development.
 1. Users can register an account and login to this system. 
 2. User can authorised this account to garmin connect so that garmin connect can transfer activity data to this backend.
 
-
+## the package introduction
+ 
+- controller: provide interface for front end
+- entity: includes all the entity class
+- dao : interact with database
+- service : responsible for business logic
+- utils : encapsulate some useful tools
+- test : unit test module
 
 ## Installation and Setup Instructions
 
@@ -38,7 +28,7 @@ Clone down this repository. You will need `maven` and `JDK1.8` installed globall
 
 Installation:
 
-`cd coachingmate`
+`cd coachingmate` <br>
 `mvn install`  
 
 To Start Server:
