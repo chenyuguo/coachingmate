@@ -47,7 +47,7 @@ public class OAuthController {
      */
     @RequestMapping("/requestToken")
     public ResponseEntity<Map<String, String>> oauthRequestToken(String username) {
-        logger.info("user " + username + "request token");
+        logger.debug("user " + username + "request token");
         RequestToken reqToken = oauthService.getRequestToken(requestTokenUrl, username);
         String result = "";
         if (reqToken != null) {

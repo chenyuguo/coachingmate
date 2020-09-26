@@ -23,13 +23,13 @@ public class LoginController {
 
     @RequestMapping("/login")
     public ResponseEntity<UserPartner> login(String username, String password){
-//        UserPartner userPartner = userService.loginCheck(username, password);
-//        if (userPartner == null) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
-//        return new ResponseEntity<>(userPartner, HttpStatus.OK);
-        UserPartner userPartner = new UserPartner();
-        userPartner.setUsername(username);
-        userPartner.setPassword(password);
-        logger.info("user username " + username + " login successfully");
+        UserPartner userPartner = userService.loginCheck(username, password);
+        if (userPartner == null) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
         return new ResponseEntity<>(userPartner, HttpStatus.OK);
+//        UserPartner userPartner = new UserPartner();
+//        userPartner.setUsername(username);
+//        userPartner.setPassword(password);
+//        logger.info("user username " + username + " login successfully");
+//        return new ResponseEntity<>(userPartner, HttpStatus.OK);
     }
 }
