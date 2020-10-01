@@ -12,6 +12,7 @@ This is a unimelb project of subject COMP90082 which is responsible for acquirin
 - [Project Status](#project-status)
 - [Components diagram](#components-diagram)
 - [The project structure](#the-project-structure)
+- [Description of the database structure ](#Description-of-the-database-structure )
 - [Installation and Setup Instructions](#installation-and-setup-instructions)
   * [1. install JDK](#1-install-jdk)
   * [2. install maven](#2-install-maven)
@@ -54,19 +55,27 @@ This project is currently in development.
 - resources/application.yml : Project profile
 resources/static/ : Static resource directory
 
+## Description of the database structure 
+
+Mongodb has one database (named coachingDB) which has three collections, which are respectively
+- requestToken : Use to store the [RequestToken entity class](https://github.com/chenyuguo/coachingmate/blob/master/src/main/java/coachingmateanalytics/coachingmate/entity/RequestToken.java)
+- user : Used to store the [Userpartner entity class](https://github.com/chenyuguo/coachingmate/blob/master/src/main/java/coachingmateanalytics/coachingmate/entity/UserPartner.java)
+- activity : Used to store the [Activity entity class](https://github.com/chenyuguo/coachingmate/blob/master/src/main/java/coachingmateanalytics/coachingmate/entity/Activity.java)
+
+
 ## Installation and Setup Instructions
 
 ### 1. install JDK
 [Official tutorial for JDK installation](https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-macos.htm#JSJIG-GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE)
 
 ### 2. install maven
-[Official tutorial for Maven installation](http://maven.apache.org/install.html)
+[Official tutorial for Maven installation](http://maven.apache.org/install.html)<br>
 take mac os for example
 - download 	apache-maven-3.6.3-bin.tar.gz
 - tar xzvf apache-maven-3.6.3-bin.tar.gz
- - Alternatively use your preferred archive extraction tool.
- - Add the bin directory of the created directory apache-maven-3.6.3 to the PATH environment variable
- - Confirm with mvn -v in a new shell. The result should look similar to
+ * Alternatively use your preferred archive extraction tool.
+ * Add the bin directory of the created directory apache-maven-3.6.3 to the PATH environment variable
+ * Confirm with mvn -v in a new shell. The result should look similar to
 ```
 Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
 Maven home: /opt/apache-maven-3.6.3
