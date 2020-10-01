@@ -12,7 +12,8 @@ This project is currently in development.
 2. User can authorised this account to garmin connect so that garmin connect can transfer activity data to this backend.
 
 ## Components diagram
-![image](https://github.com/chenyuguo/coachingmate/blob/master/Components%20Diagram.pdf)
+<embed src="https://github.com/chenyuguo/coachingmate/blob/master/Components%20Diagram.pdf" width="500" height="375" 
+ type="application/pdf">
 
 ## the package introduction
  
