@@ -1,4 +1,14 @@
+## Project Name & Pitch 
+Coachmate
+
+An application used to connect the Garmin connect and retrieve activity data, built with Springboot framework.
+This is a unimelb project of subject COMP90082 which is responsible for acquiring and processing data.
+ Data collected in Garmin Connect is acquired through Garmin wearable. devices used by athletes training under CoachingMate.
+ 
+ ## Index
+
 - [Project Name & Pitch](#project-name---pitch)
+- [Index](#Index)
 - [Project Status](#project-status)
 - [Components diagram](#components-diagram)
 - [The project structure](#the-project-structure)
@@ -18,12 +28,7 @@
   * [7. find our URL in the build log](#7-find-our-url-in-the-build-log)
 - [Documents](#documents)
 
-## Project Name & Pitch 
-Coachmate
 
-An application used to connect the Garmin connect and retrieve activity data, built with Springboot framework.
-This is a unimelb project of subject COMP90082 which is responsible for acquiring and processing data.
- Data collected in Garmin Connect is acquired through Garmin wearable. devices used by athletes training under CoachingMate.
 
 ## Project Status
 
