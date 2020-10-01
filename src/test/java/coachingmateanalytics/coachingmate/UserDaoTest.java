@@ -26,7 +26,7 @@ public class UserDaoTest extends AppTest {
 
     @Test
     public void findUserByUsername(){
-        UserPartner user= userDao.findUserByUsername("Jack");
+        UserPartner user= userDao.findUserByUsername("Saul");
         logger.info("find user is : "+ user);
     }
 
