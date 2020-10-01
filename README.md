@@ -1,4 +1,22 @@
-[toc]
+- [Project Name & Pitch](#project-name---pitch)
+- [Project Status](#project-status)
+- [Components diagram](#components-diagram)
+- [The project structure](#the-project-structure)
+- [Installation and Setup Instructions](#installation-and-setup-instructions)
+  * [1. install JDK](#1-install-jdk)
+  * [2. install maven](#2-install-maven)
+  * [3. install MongoDB](#3-install-mongodb)
+  * [4. install git environment](#4-install-git-environment)
+  * [5. Run this project locally](#5-run-this-project-locally)
+- [Deployment guidelines](#deployment-guidelines)
+  * [1. create a new application on heroku](#1-create-a-new-application-on-heroku)
+  * [2. text our app name and region](#2-text-our-app-name-and-region)
+  * [3. fork this repository to your own repository](#3-fork-this-repository-to-your-own-repository)
+  * [4. Select Github and find this forked project in your own repository](#4-select-github-and-find-this-forked-project-in-your-own-repository)
+  * [5. connect successfully](#5-connect-successfully)
+  * [6. find our app and click the Openapp button](#6-find-our-app-and-click-the-openapp-button)
+  * [7. find our URL in the build log](#7-find-our-url-in-the-build-log)
+- [Documents](#documents)
 
 ## Project Name & Pitch 
 Coachmate
