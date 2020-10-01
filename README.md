@@ -157,5 +157,6 @@ URL: <https://coachingmate2020.herokuapp.com/>
 ## Documents
 - [User Stories - Version 1.0](https://github.com/chenyuguo/coachingmate/blob/master/docs/User%20Stories%20-%20Version%201.0.pdf)
 - [Components Diagram](https://github.com/chenyuguo/coachingmate/blob/master/docs/Components%20Diagram.pdf)
-- [motivational model]()
+- [motivational model](https://github.com/chenyuguo/coachingmate/blob/master/docs/Motivational%20model.pdf)
+- [personas](https://github.com/chenyuguo/coachingmate/blob/master/docs/personas.pdf)
 
