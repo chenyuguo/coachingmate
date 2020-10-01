@@ -39,6 +39,22 @@ To login App:
 
 `localhost:8080/login?username={username}&password={password}`  
 ## How to run the project on a new Server
-![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/pic/1newApp.jpg)
+# There are serveal steps we need to do to run our app on heroku
+### First we need to create a new application on heroku
+![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/1newApp.jpg)
+
+### Next we need to text our app name and region
+![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/2newCreate.jpg)
+
+### Select Github and find our project in our repository
+![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/3connect.jpg)
+
+### connect successfully
+![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/4success.jpg)
+
+### Finally, find out app and click the Open button
+![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/5open.jpg)
+
+
 
 
