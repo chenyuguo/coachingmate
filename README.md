@@ -11,6 +11,9 @@ This project is currently in development.
 1. Users can register an account and login to this system. 
 2. User can authorised this account to garmin connect so that garmin connect can transfer activity data to this backend.
 
+## Components diagram
+![image](https://github.com/chenyuguo/coachingmate/blob/master/Components%20Diagram.pdf)
+
 ## the package introduction
  
 - controller: provide interface for front end
