@@ -38,4 +38,7 @@ To Start Server:
 To login App:
 
 `localhost:8080/login?username={username}&password={password}`  
+## How to run the project on a new Server
+
+
 
