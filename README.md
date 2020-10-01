@@ -39,7 +39,7 @@ To login App:
 
 `localhost:8080/login?username={username}&password={password}`  
 ## How to run the project on a new Server
-# There are serveal steps we need to do to run our app on heroku
+### There are serveal steps we need to do to run our app on heroku
 ### First we need to create a new application on heroku
 ![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/1newApp.jpg)
 
@@ -52,9 +52,13 @@ To login App:
 ### connect successfully
 ![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/4success.jpg)
 
-### Finally, find out app and click the Open button
+### Finally, find our app and click the Openapp button
 ![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/5open.jpg)
 
+### we can find our URL in the build log
+![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/6.jpg)
+
+URL: <https://coachingmate2020.herokuapp.com/>
 
 
 
