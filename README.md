@@ -1,3 +1,5 @@
+[toc]
+
 ## Project Name & Pitch 
 Coachmate
 
@@ -12,23 +14,83 @@ This project is currently in development.
 2. User can authorised this account to garmin connect so that garmin connect can transfer activity data to this backend.
 
 ## Components diagram
-<embed src="https://github.com/chenyuguo/coachingmate/blob/master/Components%20Diagram.pdf" width="500" height="375" 
- type="application/pdf">
+![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/componentPicture/component%20Diagram.png)
 
-## the package introduction
+
+## The project structure
+ The project adopts the development mode of sub-modules according to functions, and the structure is as follows
  
-- controller: provide interface for front end
-- entity: includes all the entity class
-- dao : interact with database
-- service : responsible for business logic
-- utils : encapsulate some useful tools
-- test : unit test module
+- coachingmateanalytics.coachingmate.controller: Front controller layer
+- coachingmateanalytics.coachingmate.entity: Data entity class
+- coachingmateanalytics.coachingmate.dao : Data interface access layer
+- coachingmateanalytics.coachingmate.service : Data service interface layer
+- coachingmateanalytics.coachingmate.service.serviceImpl : Data service interface implementation layer
+- coachingmateanalytics.coachingmate.utils : Tool library
+- coachingmateanalytics.coachingmate.intercepter : used to set the response header for all request
+
+- resources/application.yml : Project profile
+resources/static/ : Static resource directory
 
 ## Installation and Setup Instructions
 
+### 1. install JDK
+[Official tutorial for JDK installation](https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-macos.htm#JSJIG-GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE)
+
+### 2. install maven
+[Official tutorial for Maven installation](http://maven.apache.org/install.html)
+take mac os for example
+- download 	apache-maven-3.6.3-bin.tar.gz
+- tar xzvf apache-maven-3.6.3-bin.tar.gz
+ - Alternatively use your preferred archive extraction tool.
+ - Add the bin directory of the created directory apache-maven-3.6.3 to the PATH environment variable
+ - Confirm with mvn -v in a new shell. The result should look similar to
+```
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Maven home: /opt/apache-maven-3.6.3
+Java version: 1.8.0_45, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
+```
+### 3. install MongoDB
+[Official tutorial for mongoDB installation](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+
+```
+brew install mongodb-community@4.4
+```
+
+### 4. install git environment
+- linux install
+```
+yum install git
+```
+- mac install
+```
+brew install git
+```
+- Before you can use Git for version management, you need to configure Git by telling git your **username** and your **email account**
+```
+//configuration
+[root@localhost ~]# git config --global user.name flymegoc
+[root@localhost ~]# git config --global user.email 343672271@qq.com
+
+//Check the configuration
+[root@localhost ~]# git config --list
+user.name=flymegoc
+user.email=343672271@qq.com
+```
+
+### 5. Run this project locally
 Clone down this repository. You will need `maven` and `JDK1.8` installed globally on your machine.  
 
 `git clone https://github.com/chenyuguo/coachingmate`
+
+Modify configuration file
+[application-dev.properties](https://github.com/chenyuguo/coachingmate/blob/master/src/main/resources/application-dev.properties)
+```
+spring.data.mongodb.uri = mongodb://{username}:{password}@{host}:{port}/{database name}
+
+```
 
 Installation:
 
@@ -42,27 +104,35 @@ To Start Server:
 To login App:
 
 `localhost:8080/login?username={username}&password={password}`  
-## How to run the project on a new Server
-### There are serveal steps we need to do to run our app on heroku
-### First we need to create a new application on heroku
+
+
+## Deployment guidelines
+There are serveal steps we need to do to run our app on heroku
+### 1. create a new application on heroku
 ![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/1newApp.jpg)
 
-### Next we need to text our app name and region
+### 2. text our app name and region
 ![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/2newCreate.jpg)
 
-### Select Github and find our project in our repository
+### 3. fork this repository to your own repository
+
+### 4. Select Github and find this forked project in your own repository
 ![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/3connect.jpg)
 
-### connect successfully
+### 5. connect successfully
 ![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/4success.jpg)
 
-### Finally, find our app and click the Openapp button
+### 6. find our app and click the Openapp button
 ![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/5open.jpg)
 
-### we can find our URL in the build log
+### 7. find our URL in the build log
 ![image](https://github.com/chenyuguo/coachingmate/blob/master/Resources/runonserver/picture/pic/6.jpg)
 
 URL: <https://coachingmate2020.herokuapp.com/>
 
 
+## Documents
+- [User Stories - Version 1.0](https://github.com/chenyuguo/coachingmate/blob/master/docs/User%20Stories%20-%20Version%201.0.pdf)
+- [Components Diagram](https://github.com/chenyuguo/coachingmate/blob/master/docs/Components%20Diagram.pdf)
+- [motivational model]()
 
