@@ -169,3 +169,6 @@ URL: <https://coachingmate2020.herokuapp.com/>
 - [motivational model](https://github.com/chenyuguo/coachingmate/blob/master/docs/Motivational%20model.pdf)
 - [personas](https://github.com/chenyuguo/coachingmate/blob/master/docs/personas.pdf)
 
+## Release History
+- 1.0.0 -Complete the basic setup of front and rear ends (user registration, user login, garmin Connect authorization, and GARmin Connect simulation terminal data)
+- 1.0.1 - fix bug: when user name is right, password is not checked. and add log aspect.
