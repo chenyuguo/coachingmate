@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserPartner loginCheck(String username, String password) {
         UserPartner userPartner = userDao.findUserByUsername(username);
+        if(null == userPartner || !userPartner.getPassword().equals(password)) return null;
         return userPartner;
     }
 

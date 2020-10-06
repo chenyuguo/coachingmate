@@ -28,11 +28,11 @@ public class GarminPushController {
         logger.debug("uploadMetaData :" + uploadMetaData);
         HttpHeaders httpHeaders = new HttpHeaders();
         try {
-            byte[] data = IOUtils.toByteArray(file.getInputStream());
-            String dataHead = new String(data, 0, 47182);
-            logger.info("Activity Data" + dataHead);
-            Activity activity = new Activity("3f3d5af3-7847-413e-a9fe-47aeffb6de44", dataHead);
-            activityService.saveActivity(activity);
+//            byte[] data = IOUtils.toByteArray(file.getInputStream());
+//            String dataHead = new String(data, 0, 47182);
+//            logger.info("Activity Data" + dataHead);
+//            Activity activity = new Activity("3f3d5af3-7847-413e-a9fe-47aeffb6de44", dataHead);
+//            activityService.saveActivity(activity);
         } catch (Exception e) {
             httpHeaders.set("Retry-After", "120");
             return ResponseEntity.status(503).headers(httpHeaders).body("Failed to process. Reason : " + e.getMessage());
