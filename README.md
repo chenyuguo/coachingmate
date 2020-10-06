@@ -28,6 +28,7 @@ This is a unimelb project of subject COMP90082 which is responsible for acquirin
   * [6. find our app and click the Openapp button](#6-find-our-app-and-click-the-openapp-button)
   * [7. find our URL in the build log](#7-find-our-url-in-the-build-log)
 - [Documents](#documents)
+- [Release History](#Release-History)
 
 
 
