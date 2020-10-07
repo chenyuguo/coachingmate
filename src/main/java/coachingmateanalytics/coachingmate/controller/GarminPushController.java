@@ -25,14 +25,14 @@ public class GarminPushController {
     @PostMapping("/push")
     public ResponseEntity<String> acceptPushedFile1(MultipartFile file, String uploadMetaData) {
         logger.debug("start push data");
-        logger.debug("uploadMetaData :" + uploadMetaData);
+        logger.info("uploadMetaData :" + uploadMetaData);
         HttpHeaders httpHeaders = new HttpHeaders();
         try {
 //            byte[] data = IOUtils.toByteArray(file.getInputStream());
 //            String dataHead = new String(data, 0, 47182);
 //            logger.info("Activity Data" + dataHead);
-//            Activity activity = new Activity("3f3d5af3-7847-413e-a9fe-47aeffb6de44", dataHead);
-//            activityService.saveActivity(activity);
+            Activity activity = new Activity("3f3d5af3-7847-413e-a9fe-47aeffb6de44", uploadMetaData);
+            activityService.saveActivity(activity);
         } catch (Exception e) {
             httpHeaders.set("Retry-After", "120");
             return ResponseEntity.status(503).headers(httpHeaders).body("Failed to process. Reason : " + e.getMessage());
@@ -41,14 +41,4 @@ public class GarminPushController {
         return ResponseEntity.accepted().headers(httpHeaders).body("Accept the pushed file");
 
     }
-
-
-    public static void storeFileinpath(MultipartFile file ) throws IOException {
-        File file1 = new File(STORE_PATH + file.getOriginalFilename());
-        file1.createNewFile();
-        file.transferTo(file1);
-
-    }
-
-
 }
