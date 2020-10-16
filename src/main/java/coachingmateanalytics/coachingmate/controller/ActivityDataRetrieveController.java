@@ -20,8 +20,6 @@ import java.util.List;
 @Controller
 @RequestMapping("/activity")
 public class ActivityDataRetrieveController {
-    private static final Logger logger = LoggerFactory.getLogger(ActivityDataRetrieveController.class);
-
     @Autowired
     ActivityService activityService;
 
