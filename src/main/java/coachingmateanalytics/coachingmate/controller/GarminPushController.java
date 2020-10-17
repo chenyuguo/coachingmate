@@ -37,8 +37,10 @@ public class GarminPushController {
             httpHeaders.set("Retry-After", "120");
             return ResponseEntity.status(503).headers(httpHeaders).body("Failed to process. Reason : " + e.getMessage());
         }
+
         httpHeaders.set("Location", "public/garmin_raw");
         return ResponseEntity.accepted().headers(httpHeaders).body("Accept the pushed file");
+
 
     }
 }
