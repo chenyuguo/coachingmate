@@ -7,6 +7,7 @@ public class Statistic {
     private String user_id;
     private String sport_type;
     private String start_time;
+    private String access_token;
     private Number start_position_lat;
     private Number start_position_long;
     private Number avg_heart_rate;
@@ -37,7 +38,8 @@ public class Statistic {
     private Number sub_sport;
     private Number tick;
 
-    public Statistic(String statistic_id, String user_id, String sport_type, String start_time, Number start_position_lat, Number start_position_long, Number total_elapesd_time, Number total_distance, Number total_cycles, Number avg_stroke_count, Number avg_stroke_distance, Number total_calories, Number avg_speed, Number max_speed, Number avg_power, Number max_power, Number total_ascent, Number total_descent, Number num_laps, Number training_stress_score, Number intensity_factor, Number pool_length, Number threshold_power, Number avg_cadence, Number max_cadence, Number total_fat_calories, Number normalized_power, Number num_active_length, Number sub_sport) {
+    public Statistic(String access_token, String statistic_id, String user_id, String sport_type, String start_time, Number start_position_lat, Number start_position_long, Number total_elapesd_time, Number total_distance, Number total_cycles, Number avg_stroke_count, Number avg_stroke_distance, Number total_calories, Number avg_speed, Number max_speed, Number avg_power, Number max_power, Number total_ascent, Number total_descent, Number num_laps, Number training_stress_score, Number intensity_factor, Number pool_length, Number threshold_power, Number avg_cadence, Number max_cadence, Number total_fat_calories, Number normalized_power, Number num_active_length, Number sub_sport) {
+        this.access_token = access_token;
         this.statistic_id = statistic_id;
         this.user_id = user_id;
         this.sport_type = sport_type;
@@ -68,6 +70,10 @@ public class Statistic {
         this.num_active_length = num_active_length;
         this.sub_sport = sub_sport;
     }
+
+    public String getAccess_token() {return access_token; }
+
+    public void setAccess_token(String access_token) {this.access_token = access_token; }
 
     public String getStatistic_id() {
         return statistic_id;
