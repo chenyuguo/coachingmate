@@ -5,7 +5,7 @@ public class RequestToken {
 
 	private long id;
 	private long userId;
-	private String userName;
+	private String username;
 	private String token;
 	private String secret;
 
@@ -17,6 +17,13 @@ public class RequestToken {
 		super();
 	}
 
+	public RequestToken(String username, String token, String secret) {
+		super();
+		this.username = username;
+		this.token = token;
+		this.secret = secret;
+	}
+
 	public long getUserId() {
 		return userId;
 	}
@@ -25,12 +32,12 @@ public class RequestToken {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String userName) {
+		this.username = userName;
 	}
 
 	public long getId() {

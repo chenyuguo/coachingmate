@@ -1,9 +1,7 @@
 package coachingmateanalytics.coachingmate.controller;
 
-import coachingmateanalytics.coachingmate.entity.Activity;
+import coachingmateanalytics.coachingmate.entity.Statistic;
 import coachingmateanalytics.coachingmate.service.ActivityService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -24,8 +22,8 @@ public class ActivityDataRetrieveController {
     ActivityService activityService;
 
     @GetMapping("/getall")
-    public ResponseEntity<List<Activity>> retrieveDataByUser(@RequestParam("username") String username){
-        List<Activity> allByUsername = activityService.findAllByUsername(username);
+    public ResponseEntity<List<Statistic>> retrieveDataByUser(@RequestParam("username") String username){
+        List<Statistic> allByUsername = activityService.findAllByUsername(username);
         return ResponseEntity.ok(allByUsername);
     }
 }

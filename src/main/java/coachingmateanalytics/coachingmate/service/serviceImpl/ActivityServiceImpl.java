@@ -2,7 +2,7 @@ package coachingmateanalytics.coachingmate.service.serviceImpl;
 
 import coachingmateanalytics.coachingmate.dao.ActivityDao;
 import coachingmateanalytics.coachingmate.dao.UserDao;
-import coachingmateanalytics.coachingmate.entity.Activity;
+import coachingmateanalytics.coachingmate.entity.Statistic;
 import coachingmateanalytics.coachingmate.entity.UserPartner;
 import coachingmateanalytics.coachingmate.service.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +24,12 @@ public class ActivityServiceImpl implements ActivityService {
     UserDao userDao;
 
     @Override
-    public void saveActivity(Activity activity) {
+    public void saveActivity(Statistic activity) {
         activityDao.saveActivity(activity);
     }
 
     @Override
-    public List<Activity> findAllByUsername(String username) {
+    public List<Statistic> findAllByUsername(String username) {
         UserPartner user = userDao.findUserByUsername(username);
         return activityDao.findAllByAccessToken(user.getUserAccessToken());
     }

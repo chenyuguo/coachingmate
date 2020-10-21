@@ -1,6 +1,6 @@
 package coachingmateanalytics.coachingmate.dao;
 
-import coachingmateanalytics.coachingmate.entity.Activity;
+import coachingmateanalytics.coachingmate.entity.Statistic;
 import coachingmateanalytics.coachingmate.utils.Consts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -21,14 +21,14 @@ public class ActivityDaoImpl implements ActivityDao {
     private MongoTemplate mongoTemplate;
 
     @Override
-    public void saveActivity(Activity activity) {
+    public void saveActivity(Statistic activity) {
         mongoTemplate.save(activity, Consts.MONGODB_ACTIVITY_COLLECTIN_NAME);
     }
 
     @Override
-    public List<Activity> findAllByAccessToken(String accessToken) {
+    public List<Statistic> findAllByAccessToken(String accessToken) {
         Query query = Query.query(Criteria.where("accessToken").is(accessToken));
-        List<Activity> Activities = mongoTemplate.find(query, Activity.class,Consts.MONGODB_ACTIVITY_COLLECTIN_NAME);
+        List<Statistic> Activities = mongoTemplate.find(query, Statistic.class,Consts.MONGODB_ACTIVITY_COLLECTIN_NAME);
         return Activities;
     }
 }

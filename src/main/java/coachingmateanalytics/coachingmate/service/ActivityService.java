@@ -1,6 +1,6 @@
 package coachingmateanalytics.coachingmate.service;
 
-import coachingmateanalytics.coachingmate.entity.Activity;
+import coachingmateanalytics.coachingmate.entity.Statistic;
 
 import java.util.List;
 
@@ -9,6 +9,6 @@ import java.util.List;
  * @Description:
  */
 public interface ActivityService {
-    void saveActivity(Activity activity);
-    List<Activity> findAllByUsername(String username);
+    void saveActivity(Statistic activity);
+    List<Statistic> findAllByUsername(String username);
 }

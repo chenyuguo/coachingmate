@@ -1,6 +1,6 @@
 package coachingmateanalytics.coachingmate.dao;
 
-import coachingmateanalytics.coachingmate.entity.Activity;
+import coachingmateanalytics.coachingmate.entity.Statistic;
 
 import java.util.List;
 
@@ -9,6 +9,6 @@ import java.util.List;
  * @Description:
  */
 public interface ActivityDao {
-    void saveActivity(Activity activity);
-    List<Activity> findAllByAccessToken(String accessToken);
+    void saveActivity(Statistic activity);
+    List<Statistic> findAllByAccessToken(String accessToken);
 }
