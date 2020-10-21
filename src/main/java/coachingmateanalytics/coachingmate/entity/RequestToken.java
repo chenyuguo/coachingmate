@@ -3,7 +3,9 @@ package coachingmateanalytics.coachingmate.entity;
 
 public class RequestToken {
 
-	private String username;
+	private long id;
+	private long userId;
+	private String userName;
 	private String token;
 	private String secret;
 
@@ -11,21 +13,33 @@ public class RequestToken {
 		super();
 	}
 
-	public RequestToken(String username, String token, String secret) {
+	public RequestToken(String token, String secret) {
 		super();
-		this.username = username;
-		this.token = token;
-		this.secret = secret;
 	}
 
-	public String getUsername() {
-		return username;
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserId(long userId) {
+		this.userId = userId;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getToken() {
 		return token;
@@ -43,12 +57,4 @@ public class RequestToken {
 		this.secret = secret;
 	}
 
-	@Override
-	public String toString() {
-		return "RequestToken{" +
-				"username='" + username + '\'' +
-				", token='" + token + '\'' +
-				", secret='" + secret + '\'' +
-				'}';
-	}
 }
