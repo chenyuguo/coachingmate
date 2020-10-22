@@ -5,6 +5,8 @@ import coachingmateanalytics.coachingmate.entity.RequestToken;
 import coachingmateanalytics.coachingmate.entity.UserPartner;
 import coachingmateanalytics.coachingmate.service.OAuthService;
 import coachingmateanalytics.coachingmate.utils.Consts;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,8 +47,9 @@ public class OAuthController {
      * so the user can enter their Garmin Connect username and password.
      * @return A ResponseEntity sending the user to the manual oauthConfirm page.
      */
-    @RequestMapping("/requestToken")
-    public ResponseEntity<Map<String, String>> oauthRequestToken(String username) {
+    @PostMapping("/requestToken")
+    @ApiOperation(value = "oauth RequestToken", notes = "Acquire Unauthorized Request Token and Token Secret ")
+    public ResponseEntity<Map<String, String>> oauthRequestToken(@ApiParam(required = true, type = "String") String username) {
         logger.debug("user " + username + "request token");
         RequestToken reqToken = oauthService.getRequestToken(requestTokenUrl, username);
         String result = "";
@@ -67,9 +70,13 @@ public class OAuthController {
      * @param oauthVerifierValue
      * @return
      */
-    @RequestMapping("/accessToken")
-    public String oauthAccessToken(@RequestParam(value = "oauth_token") String oauthToken,
-                            @RequestParam(value = "oauth_verifier") String oauthVerifierValue) {
+    @GetMapping("/accessToken")
+    @ApiOperation(value = "callback url", notes = "this is used to receive the request from garmin connect")
+
+    public String oauthAccessToken(@ApiParam(required = true, type = "String")
+                                       @RequestParam(value = "oauth_token") String oauthToken,
+                                   @ApiParam(required = true, type = "String")
+                                   @RequestParam(value = "oauth_verifier") String oauthVerifierValue) {
         if (oauthVerifierValue != null && !oauthVerifierValue.isEmpty()) {
             String accessTokenUrl = oauthAccessTokenUrl + Consts.URL_DELIMTER + Consts.OAUTH_VERIFIER + Consts.VALUE_DELIMTER + oauthVerifierValue;
             oauthService.generateAccessToken(accessTokenUrl, oauthToken);
@@ -86,7 +93,9 @@ public class OAuthController {
      * @return
      */
     @RequestMapping(value = "/userAccessToken", method = RequestMethod.POST)
-    public String generateToken(@RequestParam String username) {
+    @ApiOperation(value = "generate Access Token", notes = "when user first invoke this url, it will authorise" +
+            "the user, when this user has been authorised, it just need to get token from mongodb")
+    public String generateToken(@ApiParam(required = true, type = "String") @RequestParam String username) {
         UserPartner userPartner = userDao.findUserByUsername(username);
         if (userPartner.getUserAccessToken() != null) {
             return userPartner.getUsername();

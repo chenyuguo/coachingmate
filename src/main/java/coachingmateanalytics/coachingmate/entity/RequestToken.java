@@ -2,7 +2,6 @@ package coachingmateanalytics.coachingmate.entity;
 
 
 public class RequestToken {
-
 	private long id;
 	private long userId;
 	private String username;

@@ -1,5 +1,8 @@
 package coachingmateanalytics.coachingmate.entity;
 
+import io.swagger.annotations.ApiModel;
+
+@ApiModel
 public class Statistic {
     private String statistic_id;
     private String serial_number;

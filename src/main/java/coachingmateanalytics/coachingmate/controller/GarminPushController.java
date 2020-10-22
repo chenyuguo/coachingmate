@@ -1,6 +1,8 @@
 package coachingmateanalytics.coachingmate.controller;
 
 import coachingmateanalytics.coachingmate.service.ActivityService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,9 @@ public class GarminPushController {
 
     //configure this url to enpoint configuration, and the garmin endpoint will transfer the data to this server
     @PostMapping("/push")
-    public ResponseEntity<String> acceptPushedFile1(MultipartFile file, String uploadMetaData) {
+    @ApiOperation(value = "push data url", notes = "configure this url to enpoint configuration, " +
+            "and the garmin endpoint will transfer the data to this server")
+    public ResponseEntity<String> acceptPushedFile1(@ApiParam(type = "MultipartFile") MultipartFile file, @ApiParam(type = "String") String uploadMetaData) {
         logger.debug("start push data");
         logger.info("uploadMetaData :" + uploadMetaData);
         HttpHeaders httpHeaders = new HttpHeaders();

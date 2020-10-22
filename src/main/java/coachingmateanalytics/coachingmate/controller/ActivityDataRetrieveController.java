@@ -2,6 +2,8 @@ package coachingmateanalytics.coachingmate.controller;
 
 import coachingmateanalytics.coachingmate.entity.Statistic;
 import coachingmateanalytics.coachingmate.service.ActivityService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -22,7 +24,8 @@ public class ActivityDataRetrieveController {
     ActivityService activityService;
 
     @GetMapping("/getall")
-    public ResponseEntity<List<Statistic>> retrieveDataByUser(@RequestParam("username") String username){
+    @ApiOperation(value = "retrieve Data By Username", notes = "query all activity data of specific user")
+    public ResponseEntity<List<Statistic>> retrieveDataByUser(@ApiParam(required = true, type = "String") @RequestParam("username") String username){
         List<Statistic> allByUsername = activityService.findAllByUsername(username);
         return ResponseEntity.ok(allByUsername);
     }
