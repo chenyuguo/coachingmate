@@ -47,7 +47,7 @@ public class OAuthController {
      * so the user can enter their Garmin Connect username and password.
      * @return A ResponseEntity sending the user to the manual oauthConfirm page.
      */
-    @PostMapping("/requestToken")
+    @RequestMapping("/requestToken")
     @ApiOperation(value = "oauth RequestToken", notes = "Acquire Unauthorized Request Token and Token Secret ")
     public ResponseEntity<Map<String, String>> oauthRequestToken(@ApiParam(required = true, type = "String") String username) {
         logger.debug("user " + username + "request token");
