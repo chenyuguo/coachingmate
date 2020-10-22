@@ -29,6 +29,7 @@ public class LoginController {
     @ApiOperation(value = "login interface", notes = "user login")
     public ResponseEntity<UserPartner> login(@ApiParam(required = true, type = "String") String username,
                                              @ApiParam(required = true, type = "String") String password){
+        logger.info("username = " + username + "; password = " + password);
         UserPartner userPartner = userService.loginCheck(username, password);
         if (userPartner == null) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
         return new ResponseEntity<>(userPartner, HttpStatus.OK);
