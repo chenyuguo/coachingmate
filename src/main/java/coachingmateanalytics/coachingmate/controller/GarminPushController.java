@@ -84,6 +84,7 @@ public class GarminPushController {
                                                 avg_power, max_power, total_ascent, total_descent, num_laps,
                                                 training_stress_score, intensity_factor, pool_length, threshold_power, avg_cadence,
                                                 max_cadence, total_fat_calories, normalized_power, num_active_lengths, sub_sport);
+            activityService.saveActivity(statistic);
         } catch (Exception e) {
             httpHeaders.set("Retry-After", "120");
             return ResponseEntity.status(503).headers(httpHeaders).body("Failed to process. Reason : " + e.getMessage());
