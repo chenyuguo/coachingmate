@@ -40,6 +40,8 @@
     </dependency>
     -->
 
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -82,6 +84,12 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.62</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.darwinsys</groupId>
+            <artifactId>hirondelle-date4j</artifactId>
+            <version>1.5.1</version>
         </dependency>
 
         <dependency>

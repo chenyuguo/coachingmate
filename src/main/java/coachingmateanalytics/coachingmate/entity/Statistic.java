@@ -10,6 +10,7 @@ public class Statistic {
     private String user_id;
     private String sport_type;
     private String start_time;
+    private String access_token;
     private Number start_position_lat;
     private Number start_position_long;
     private Number avg_heart_rate;
