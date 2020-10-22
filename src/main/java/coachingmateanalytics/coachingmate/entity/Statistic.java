@@ -41,8 +41,9 @@ public class Statistic {
     private Number sub_sport;
     private Number tick;
 
-    public Statistic(String statistic_id, String user_id, String sport_type, String start_time, Number start_position_lat, Number start_position_long, Number total_elapesd_time, Number total_distance, Number total_cycles, Number avg_stroke_count, Number avg_stroke_distance, Number total_calories, Number avg_speed, Number max_speed, Number avg_power, Number max_power, Number total_ascent, Number total_descent, Number num_laps, Number training_stress_score, Number intensity_factor, Number pool_length, Number threshold_power, Number avg_cadence, Number max_cadence, Number total_fat_calories, Number normalized_power, Number num_active_length, Number sub_sport) {
+    public Statistic(String access_token,String statistic_id, String user_id, String sport_type, String start_time, Number start_position_lat, Number start_position_long, Number total_elapesd_time, Number total_distance, Number total_cycles, Number avg_stroke_count, Number avg_stroke_distance, Number total_calories, Number avg_speed, Number max_speed, Number avg_power, Number max_power, Number total_ascent, Number total_descent, Number num_laps, Number training_stress_score, Number intensity_factor, Number pool_length, Number threshold_power, Number avg_cadence, Number max_cadence, Number total_fat_calories, Number normalized_power, Number num_active_length, Number sub_sport) {
         this.statistic_id = statistic_id;
+        this.access_token = access_token;
         this.user_id = user_id;
         this.sport_type = sport_type;
         this.start_time = start_time;

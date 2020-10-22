@@ -78,12 +78,13 @@ public class GarminPushController {
             int sub_sport = record.getIntValue(0, "sub_sport");
 
 
-            Statistic statistic = new Statistic(statistic_id, user_id, sport, start_time.toString(),
+            Statistic statistic = new Statistic(access_token,statistic_id, user_id, sport, start_time.toString(),
                                                 start_position_lat, start_position_long, total_elapsed_time, total_distance, total_cycles,
                                                 avg_stroke_count , avg_stroke_distance, total_calories, avg_speed, max_speed,
                                                 avg_power, max_power, total_ascent, total_descent, num_laps,
                                                 training_stress_score, intensity_factor, pool_length, threshold_power, avg_cadence,
                                                 max_cadence, total_fat_calories, normalized_power, num_active_lengths, sub_sport);
+            logger.info("finishing parse data ");
             activityService.saveActivity(statistic);
         } catch (Exception e) {
             httpHeaders.set("Retry-After", "120");
