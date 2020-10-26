@@ -11,4 +11,5 @@ import java.util.List;
 public interface ActivityService {
     void saveActivity(Statistic activity);
     List<Statistic> findAllByUsername(String username);
+    List<Statistic> findAllByAccessToken(String accessToken);
 }

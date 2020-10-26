@@ -33,4 +33,9 @@ public class ActivityServiceImpl implements ActivityService {
         UserPartner user = userDao.findUserByUsername(username);
         return activityDao.findAllByAccessToken(user.getUserAccessToken());
     }
+
+    @Override
+    public List<Statistic> findAllByAccessToken(String accessToken) {
+        return activityDao.findAllByAccessToken(accessToken);
+    }
 }

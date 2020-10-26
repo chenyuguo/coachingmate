@@ -2,11 +2,14 @@ package coachingmateanalytics.coachingmate.controller;
 
 import coachingmateanalytics.coachingmate.entity.Statistic;
 import coachingmateanalytics.coachingmate.service.ActivityService;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import hirondelle.date4j.DateTime;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import net.studioblueplanet.fitreader.FitReader;
+import net.studioblueplanet.fitreader.FitRecord;
+import net.studioblueplanet.fitreader.FitRecordRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +18,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import net.studioblueplanet.fitreader.*;
 
 @RestController
 public class GarminPushController {
@@ -42,8 +44,8 @@ public class GarminPushController {
             JSONObject jsonObject = JSON.parseObject(uploadMetaData);
             String access_token = jsonObject.getString("oauthToken");
             FitRecordRepository repository;
-            FitReader           reader;
-            FitRecord           record;
+            FitReader reader;
+            FitRecord record;
             reader = FitReader.getInstance();
             repository = reader.readInputStream(file.getInputStream());
             record = repository.getFitRecord("session");

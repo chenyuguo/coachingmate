@@ -27,8 +27,10 @@ public class ActivityDaoImpl implements ActivityDao {
 
     @Override
     public List<Statistic> findAllByAccessToken(String accessToken) {
-        Query query = Query.query(Criteria.where("accessToken").is(accessToken));
+        Query query = Query.query(Criteria.where("access_token").is(accessToken));
         List<Statistic> Activities = mongoTemplate.find(query, Statistic.class,Consts.MONGODB_ACTIVITY_COLLECTIN_NAME);
         return Activities;
     }
+
+
 }
