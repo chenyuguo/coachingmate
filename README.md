@@ -172,4 +172,6 @@ URL: <https://coachingmate2020.herokuapp.com/>
 
 ## Release History
 - 1.0.0 -Complete the basic setup of front and rear ends (user registration, user login, garmin Connect authorization, and GARmin Connect simulation terminal data)
-- 1.0.1 - fix bug: when user name is right, password is not checked. and add log aspect.
+- 1.0.1 -fix bug: when user name is right, password is not checked. and add log aspect.
+- 2.0.0 -cancel https certificate 
+- 3.0.0 -add api document annotations and integrate the parsing .fit data module
