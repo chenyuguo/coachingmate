@@ -5,7 +5,7 @@ An application used to connect the Garmin connect and retrieve activity data, bu
 This is a unimelb project of subject COMP90082 which is responsible for acquiring and processing data.
  Data collected in Garmin Connect is acquired through Garmin wearable. devices used by athletes training under CoachingMate.
  
- ## Index
+ ## Table of Content
 
 - [Project Name & Pitch](#project-name---pitch)
 - [Index](#Index)
