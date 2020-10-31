@@ -174,4 +174,6 @@ URL: <https://coachingmate2020.herokuapp.com/>
 - 1.0.0 -Complete the basic setup of front and rear ends (user registration, user login, garmin Connect authorization, and GARmin Connect simulation terminal data)
 - 1.0.1 - fix bug: when user name is right, password is not checked. and add log aspect.
 - 2.0.0 - Solve HTTPS problems requiring certificate
-- 3.0.0 - The GARmin Connect app can call push URL to push data to the back end，this is the final version
+- 3.0.0 - add api document annotations and integrate the parsing .fit data module. The GARmin Connect app can call push URL to push data to the back end，this is the final version
+
+
