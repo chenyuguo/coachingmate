@@ -168,7 +168,6 @@ URL: <https://coachingmate2020.herokuapp.com/>
 - [User Stories](https://github.com/chenyuguo/coachingmate/blob/master/docs/UserStories.pdf)
 - [Components Diagram](https://github.com/chenyuguo/coachingmate/blob/master/docs/Components%20Diagram.pdf)
 - [motivational model](https://github.com/chenyuguo/coachingmate/blob/master/docs/Motivational%20model.pdf)
-- [personas](https://github.com/chenyuguo/coachingmate/blob/master/docs/personas.pdf)
 - [coachingmate-api](https://github.com/chenyuguo/coachingmate/blob/master/docs/coachingmate-api.pdf)
 - [Integrate MongoDB within SpringBoot](https://github.com/chenyuguo/coachingmate/blob/master/docs/Integrate%20MongoDB%20within%20SpringBoot.pdf)
 
